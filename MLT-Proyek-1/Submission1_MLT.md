@@ -1,5 +1,9 @@
 # Laporan Proyek Machine Learning - Ni Made Yuli Cahyani
 ## Domain Proyek
+
+Domain proyek yang dipilih dalam proyek _machine learning_ ini adalah mengenai **pertanian** dengan judul proyek "Prediksi Tanaman yang Cocok untuk Tumbuh di Lahan Pertanian Tertentu".
+
+-   Latar Belakang
 Pada bagian ini, Anda menguraikan secara singkat informasi mengenai pilihan domain yang akan diselesaikan permasalahannya. 
 Sebagai contoh, Anda memilih domain telekomunikasi. Anda dapat menguraikan bagian ini dengan pendekatan berikut:
 - Sertakan informasi atau latar belakang yang relevan mengenai pemilihan domain ini.
