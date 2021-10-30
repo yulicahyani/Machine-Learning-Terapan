@@ -55,3 +55,17 @@ Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur ki
 - Bagaimana cara menerapkannya ke dalam kode.
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+
+## _Referensi:_
+
+[[1](https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/)] Setiawan, A. 2014. _Posisi Pertanian Yang Tetap Strategis Masa Kini dan Masa Depan_. https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/
+
+[[2](https://prosiding.senadi.upy.ac.id/index.php/senadi/article/view/164)] Nugroho, F. A., Oyama, S., Riyadi, A. (2020). _Sistem Pendukung Keputusan Menentukan Jenis Tanaman Pada Lahan Pertanian Berdasarkan Letak Geografis dan Curah Hujan Menggunakan Metode Rule Based System_. Prosiding dalam Seminar Nasional Dinamika Informatika, Vol 4, No 1. https://prosiding.senadi.upy.ac.id/index.php/senadi/article/view/164
+
+[[3](https://medium.com/@auliagusningati/precision-agriculture-precision-farming-dan-digital-farming-fe77ba131be6)] Gusning, A. (20120, Aug 1). _Precision Agriculture, Precision Farming dan Digital Farming_. Medium. https://medium.com/@auliagusningati/precision-agriculture-precision-farming-dan-digital-farming-fe77ba131be6
+
+[[4](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)] Harrison, O. (2019, July 14). _Machine Learning Basics with the K-Nearest Neighbors Algorithm_. Medium. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761
+
+[[5](https://statisticsbyjim.com/basics/remove-outliers/)] Frost, J. (2021, April 5). _Guidelines for Removing and Handling Outliers in Data._ Statistics By Jim. https://statisticsbyjim.com/basics/remove-outliers/
+
+[[6](https://www.ijert.org/crop-prediction-using-machine-learning-approaches)] Mahendra, N., Vishwakarma, D., Nischitha, K., Ashwini, Manjuraju, M. R. (2020). _Crop Prediction using Machine Learning Approaches_. International Journal of Engineering Research & Technology, Vol 09, Issue 08. https://www.ijert.org/crop-prediction-using-machine-learning-approaches
