@@ -4,26 +4,41 @@
 Domain proyek yang dipilih dalam proyek _machine learning_ ini adalah mengenai **pertanian** dengan judul proyek "Prediksi Tanaman yang Cocok untuk Ditanam di Lahan Pertanian Tertentu".
 
 -   Latar Belakang
-Pada bagian ini, Anda menguraikan secara singkat informasi mengenai pilihan domain yang akan diselesaikan permasalahannya. 
-Sebagai contoh, Anda memilih domain telekomunikasi. Anda dapat menguraikan bagian ini dengan pendekatan berikut:
-- Sertakan informasi atau latar belakang yang relevan mengenai pemilihan domain ini.
-- Jelaskan mengapa dan bagaimana masalah dalam domain yang Anda pilih tersebut harus diselesaikan.
-- Sertakan pula hasil riset terkait atau referensi yang relevan. Anda dapat menggunakan [tautan](https://scholar.google.com/) untuk menuliskan referensi atau rujukan.
+
+Sektor pertanian di Indonesia hingga saat ini memegang peranan penting dalam perekonomian nasional dan pembangunan negara secara keseluruhan. Pertanian masih menjadi andalan sebagai sumber bahan pangan [[1](https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/)] dan sumber mata pencaharian terbesar di Indonesia bahkan hampir di setiap daerah di Indonesia terdapat lahan pertanian [[2](https://prosiding.senadi.upy.ac.id/index.php/senadi/article/view/164)]. Sebelum melakukan proses pertanian maka seorang petani harus mengumpulkan berbagai informasi yang dapat mempengaruhi proses pertanian terlebih dahulu. Informasi yang diperlukan antara lain seperti karaktersistik, struktur dan tekstur lahan, jenis tanaman yang akan ditanam, dan target panen [[3](https://medium.com/@auliagusningati/precision-agriculture-precision-farming-dan-digital-farming-fe77ba131be6)]. Namun pada kenyataannya, dalam melakukan penanaman tanaman pada suatu lahan pertanian, tidak banyak petani yang memperhitungkan apakah lahan yang dimiliki cocok untuk ditanami jenis tanaman yang telah ditentukan atau tidak [[2](https://prosiding.senadi.upy.ac.id/index.php/senadi/article/view/164)]. Keputusan seorang petani mengenai jenis tanaman apa yang akan ditanam di lahannya pada umumnya tergantung pada intuisi petani itu sendiri, petani akan lebih memilih tanaman yang sedang tren di wilayah sekitarnya dan biasanya mereka tidak memiliki pengetahuan yang cukup tentang kandungan nutrisi lahan seperti nitrogen, fosfor, kalium dalam lahan [[6](https://www.ijert.org/crop-prediction-using-machine-learning-approaches)]. Sehingga, jika petani mengambil keputusan yang salah pada pemilihan tanaman maka hasil panen menjadi tidak optimal dan berpotensi mengalami kerugian yang cukup besar nantinya [[2](https://prosiding.senadi.upy.ac.id/index.php/senadi/article/view/164)].
+
+Berdasarkan permasalahan di atas, maka pada proyek ini akan dibangun suatu model _machine larning_ untuk memprediksi jenis tanaman yang cocok ditanam di lahan pertanian tertentu berdasarkan parameter kandungan N, P, K (Nitrogen, Fosfor, Kalium) pada lahan, curah hujan, huhu, kelembaban dan pH. Dengan adanya model _machine learning_ ini, diharapkan dapat membantu dan memudahkan petani dalam mengambil keputusan tentang strategi pertanian khususnya dalam memilih jenis tanaman yang cocok untuk lahan mereka, sehingga dapat meminimalisir kesalahan penanaman serta dapat meningkatkan hasil produksi di sektor pertanian. Kemudian untuk tahap pengembangan selanjutnya implementasi dari model ini dapat dijalankan pada sebuah aplikasi berbasis web ataupun android.
+
 
 ## Business Understanding
-Bagian ini menjelaskan proses klarifikasi masalah dan mengajukan minimal satu solusi untuk menyelesaikan permasalahan. Bagian laporan ini mencakup:
 
 ### Problem Statements
-Tuliskan problem statement Anda di sini. Anda dapat menggunakan kalimat tanya untuk mendefinisikan bagian ini.
+Berdasarkan pada latar belakang diatas, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
+
+-   Bagaimana cara melakukan pra-pemrosesan data lahan sehingga dapat digunakan untuk membuat model yang baik?
+-   Bagaimana cara membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut?
 
 ### Goals
-Tuliskan dan jelaskan goal proyek yang ingin Anda capai di bagiani ini. Anda dapat menggunakan bullet point jika memiliki lebih dari satu goals proyek.
+Tujuan dibuatnya proyek ini adalah sebagai berikut :
+
+-   Melakukan pra-pemrosesan data lahan agar dapat digunakan dalam membuat model.
+-   Membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut dengan tingkat akurasi > 75%.
 
 ### Solution statements
-Sampaikan solusi yang Anda ajukan untuk menyelesaikan permasalahan di sini. Misalnya, Anda mengajukan dua algoritma machine learning sebagai solusi permasalahan, yaitu Random Forest dan Boosting Algorithm. Jelaskan secara singkat mengenai kedua algoritma ini. 
-Sebagai contoh:
-- **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
-- **Boosting Algorithm**. Sama dengan di atas. 
+Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
+
+- **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
+  
+    -   Mengisi data yang kosong dengan nilai rata rata atau _mean substitution_, jika terdapat data yang kosong pada dataset.
+    -   Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
+    -   Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_).
+    -   Melakukan standardisasi data pada semua fitur numerik pada dataset.
+  
+- **Pembangunan Model**. Pada pembangunan model terdapat beberapa algorima yang digunakan, antara lain :
+
+  - **K-Nearest Neighbor**.
+  - **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
+  - **XGBoost Algorithm**. Sama dengan di atas. 
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
