@@ -204,7 +204,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
  
 Dari hasil pengujian ketiga model yang telah dibuat, berikut merupakan perbandingan performa antar Model :
 
-<img width="361" alt="performa model" src="https://user-images.githubusercontent.com/71582007/139703268-263ab661-6e56-4cd3-ab3a-56e7da1024a5.PNG">
+<img width="362" alt="performa model" src="https://user-images.githubusercontent.com/71582007/139711531-1f9fcbe3-a29c-433e-b239-c5c2b3f6f5a1.PNG">
 
 Dari tabel di atas dapat memberikan informasi bahwa ketiga model yang dibangun memiliki nilai akurasi di atas 80%. Dimana dapat dilihat juga bahwa model dengan algoritma Random Forest memiliki performa (nilai akurasi, precision, dan recall) yang lebih baik dari model dengan algoritma K-Nearest Neighbor dan XGBoost. 
 
