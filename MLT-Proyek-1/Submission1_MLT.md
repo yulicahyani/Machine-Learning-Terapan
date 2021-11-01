@@ -1,7 +1,7 @@
 # Laporan Proyek Machine Learning - Ni Made Yuli Cahyani
 ## Domain Proyek
 
-Domain proyek yang dipilih dalam proyek _machine learning_ ini adalah mengenai **pertanian** dengan judul proyek "Prediksi Tanaman yang Cocok untuk Ditanam di Lahan Pertanian Tertentu".
+Domain proyek yang dipilih dalam proyek _machine learning_ ini adalah mengenai **pertanian** dengan judul proyek "Prediksi Jenis Tanaman yang Cocok untuk Ditanam di Lahan Pertanian Tertentu".
 
 -   Latar Belakang
 
