@@ -80,7 +80,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Understanding
 - **Informasi Dataset**
-  <br> Dataset yang digunakan pada proyek ini yaitu crop dataset, informasi lebih lanjut  mengenai dataset tersebut dapat lihat pada tabel berikut :
+  <br> Dataset yang digunakan pada proyek ini yaitu crop dataset, informasi lebih lanjut  mengenai dataset tersebut dapat lihat pada tabel berikut:
 
   | Jenis                   | Keterangan                                                                              |
   | ----------------------- | --------------------------------------------------------------------------------------- |
