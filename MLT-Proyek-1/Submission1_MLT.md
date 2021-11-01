@@ -49,7 +49,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
     
     -   Kelebihan :
         -   Algoritma KNN merupakan algoritma yang sederhana dan mudah untuk diimplementasikan
-        -   Algoritma KNN dapat diimplementasikan pada beberapa kasus seperti klasifikasi, regresi dan pencarian
+        -   Dapat diimplementasikan pada beberapa kasus seperti klasifikasi, regresi dan pencarian
     -   Kekurangan :
         -   Algoritma KNN menjadi lebih lambat secara signifikan seiring meningkatnya jumlah sampel dan/atau variabel independen
 
@@ -58,16 +58,22 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
     
     -   Kelebihan :
         -   Algoritma Random Forest merupakan algoritma dengan pembelajaran paling akurat yang tersedia. Untuk banyak kumpulan data, algoritma ini menghasilkan pengklasifikasi yang sangat akurat
-        -   Algoritma ini berjalan secara efisien pada data besar
-        -   Algoritma ini dapat menangani ribuan variabel input tanpa penghapusan variabel
-        -   Algoritma ini memberikan perkiraan variabel apa yang penting dalam klasifikasi
-        -   Algoritma ini memiliki metode yang efektif untuk memperkirakan data yang hilang dan menjaga akurasi ketika sebagian besar data hilang
+        -   Berjalan secara efisien pada data besar
+        -   Dapat menangani ribuan variabel input tanpa penghapusan variabel
+        -   Memberikan perkiraan variabel apa yang penting dalam klasifikasi
+        -   Memiliki metode yang efektif untuk memperkirakan data yang hilang dan menjaga akurasi ketika sebagian besar data hilang
     -   Kekurangan :
         -   Algoritma Random Forest overfiting untuk beberapa kumpulan data dengan tugas klasifikasi/regresi yang bising/noise
         -   Untuk data yang menyertakan variabel kategorik dengan jumlah level yang berbeda, Random Forest menjadi bias dalam mendukung atribut dengan level yang lebih banyak. Oleh karena itu, skor kepentingan variabel dari Random Forest tidak dapat diandalkan untuk jenis data ini.
 
   - **XGBoost Algorithm**.
-    <br>
+    <br> XGboost adalah algoritma yang merupakan implementasi lanjutan dari algoritma peningkatan gradien (Gradient Boosting). XGboost menggunakan prinsip ensemble yaitu menggabungkan beberapa set pembelajar (tree) yang lemah menjadi sebuah model yang kuat sehinga menghasilkan prediksi yang kuat. Kelebihan dari algoritma XGBoost adalah sebagai berikut (bersumber dari [[10](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d)]) :
+    
+    -   Kelebihan :
+        -   Dapat melakukan pemrosesan paralel yang dapat mempercepat komputasi
+        -   Memiliki fitur regularisasi untuk mencegah overfitting
+        -   Menangani berbagai jenis pola sparsity dalam data dengan lebih efisien
+        -   Dilengkapi dengan built in cross validation
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
@@ -118,4 +124,7 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 
 [[8](https://id.wikipedia.org/wiki/Random_forest)] Wikipedia. (2021, Sept 23). _Random forest_. Wikipedia. https://id.wikipedia.org/wiki/Random_forest
 
-[[9](https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0)] Chakure, A. (2019, jul 6). _Random Forest Classification_. Medium. https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0
+[[9](https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0)] Chakure, A. (2019, Jul 6). _Random Forest Classification_. Medium. https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0
+
+[[10](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d)] Morde, V. (2019, Apr 8). _XGBoost Algorithm: Long May She Reign!_. Medium. https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d
+
