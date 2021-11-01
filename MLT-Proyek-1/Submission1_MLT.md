@@ -13,7 +13,7 @@ Berdasarkan permasalahan di atas, maka pada proyek ini akan dibangun suatu model
 ## Business Understanding
 
 ### Problem Statements
-Berdasarkan pada latar belakang diatas, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
+Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pada proyek ini adalah sebagai berikut :
 
 -   Bagaimana cara melakukan pra-pemrosesan data lahan sehingga dapat digunakan untuk membuat model yang baik?
 -   Bagaimana cara membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut?
@@ -21,7 +21,7 @@ Berdasarkan pada latar belakang diatas, permasalahan yang dapat diselesaikan pad
 ### Goals
 Tujuan dibuatnya proyek ini adalah sebagai berikut :
 
--   Melakukan pra-pemrosesan data lahan agar dapat digunakan dalam membuat model.
+-   Melakukan pra-pemrosesan data lahan agar dapat digunakan dalam membangun model.
 -   Membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut dengan tingkat akurasi > 75%.
 
 ### Solution statements
@@ -29,14 +29,30 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 - **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
   
-    -   Mengisi data yang kosong dengan nilai rata rata atau _mean substitution_, jika terdapat data yang kosong pada dataset.
+    -   Memeriksa _missing value_ pada data dan mengisinya dengan nilai rata rata atau _mean substitution_ jika ditemukan _missing value_ pada data.
     -   Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
     -   Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_).
     -   Melakukan standardisasi data pada semua fitur numerik pada dataset.
   
 - **Pembangunan Model**. Pada pembangunan model terdapat beberapa algorima yang digunakan, antara lain :
 
-  - **K-Nearest Neighbor**.
+  - **K-Nearest Neighbor**. 
+    <br>K-Nearest Neighbor atau KNN adalah algoritma yang relatif sederhana dibandingkan dengan algoritma lain. Algoritma KNN menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k-tetangga terdekat. KNN bisa digunakan untuk kasus klasifikasi dan regresi [[7](https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f)]. Cara kerja algoritma KNN adalah sebagai berikut (bersumber dari [[4](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)]) :
+    
+    -   Inisialisasi nilai K (jumlah tetangga)
+    -   Hitung jarak antara data baru yang ditanyakan dengan seluruh sampel data pelatihan
+    -   Urutkan seluruh jarak berdasarkan jarak minimum dan tetapkan jumlah tetangga (nearest neighbors) sesuai dengan nilai K
+    -   Pilih sejumlah K data dengan jarak terdekat
+    -   Kemudian tentukan kelas atau label dari data baru
+    
+    Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (bersumber dari [[4](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)]) :
+    
+    -   Kelebihan :
+        -   Algoritma KNN merupakan algoritma yang sederhana dan mudah untuk diimplementasikan
+        -   Algoritma KNN dapat diimplementasikan pada beberapa kasus seperti klasifikasi, regresi dan pencarian
+    -   Kekurangan :
+        -   Algoritma KNN menjadi lebih lambat secara signifikan seiring meningkatnya jumlah sampel dan/atau variabel independen
+
   - **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
   - **XGBoost Algorithm**. Sama dengan di atas. 
 
@@ -84,3 +100,5 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 [[5](https://statisticsbyjim.com/basics/remove-outliers/)] Frost, J. (2021, April 5). _Guidelines for Removing and Handling Outliers in Data._ Statistics By Jim. https://statisticsbyjim.com/basics/remove-outliers/
 
 [[6](https://www.ijert.org/crop-prediction-using-machine-learning-approaches)] Mahendra, N., Vishwakarma, D., Nischitha, K., Ashwini, Manjuraju, M. R. (2020). _Crop Prediction using Machine Learning Approaches_. International Journal of Engineering Research & Technology, Vol 09, Issue 08. https://www.ijert.org/crop-prediction-using-machine-learning-approaches
+
+[[7](https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f)] Raj, A. (2021, Apr 8). _Introduction to Classification Using K Nearest Neighbours_. Medium. https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f
