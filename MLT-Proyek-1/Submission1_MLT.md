@@ -172,14 +172,32 @@ Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
 Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ yaitu tugas klasifikasi dengan lebih dari dua kelas atau banyak kelas. Proses modeling dalam proyek ini menggunakan 3 algoritma _machine learning_ yaitu `K-Nearest Neighbor`, `Random Forest` dan `XGBoost Algorithm` kemudian membandingkan performanya.
 
 - **K-Nearest Neighbor**
-  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) dari library Scikitlearn.
+  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) dari library Scikitlearn dengan nilai k = 1. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan algoritma K-Nearest Neighbor dapat dilihat pada tabel berikut :
+  <p>Classification Report</p>
+  <img width="200" alt="report1" src="https://user-images.githubusercontent.com/71582007/139689900-a487b612-8b51-4f0a-b7f9-bfea353ee9f9.PNG">
+  <p>Confusion Matrix</p>
+  <img width="825" alt="matrixevaluasi1" src="https://user-images.githubusercontent.com/71582007/139689940-26cad782-328f-4e5e-beb3-e07cbe53aaf3.PNG">
   
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma K-Nearest Neighbor memperoleh nilai akurasi yaitu sebesar 0.97.
+
 - **Random Forest**
-  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [RandomForestClassifier](https://scikitlearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) dari library Scikitlearn.
-
+  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [RandomForestClassifier](https://scikitlearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) dari library Scikitlearn. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan algoritma Random Forest dapat dilihat pada tabel berikut :
+  <p>Classification Report</p>
+  <img width="200" alt="report2" src="https://user-images.githubusercontent.com/71582007/139693004-0f4397b6-31f1-49f8-848a-98947ac93dc2.PNG">
+  <p>Confusion Matrix</p>
+  <img width="814" alt="matrixevaluasi2" src="https://user-images.githubusercontent.com/71582007/139693019-d31b22fa-3315-41fc-97c5-d5995328a61b.PNG">
+  
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma Random Forest memperoleh nilai akurasi yaitu sebesar 0.99.
+  
 - **XGBoost Algorithm**
-  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html) dari library xgboost.
-
+  <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html) dari library xgboost. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan XGBoost Algorithm dapat dilihat pada tabel berikut :
+  <p>Classification Report</p>
+  <img width="200" alt="report3" src="https://user-images.githubusercontent.com/71582007/139693119-ea1c9fea-a565-466a-a7c7-094ddd418737.PNG">
+  <p>Confusion Matrix</p>
+  <img width="816" alt="matrixevaluasi3" src="https://user-images.githubusercontent.com/71582007/139693273-15fec773-6edf-4e37-bd65-2af24f94dbdb.PNG">
+  
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma XGBoost memperoleh nilai akurasi yaitu sebesar 0.99.
+  
 ## Evaluation
 Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memilih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
