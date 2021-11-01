@@ -31,7 +31,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
   
     -   Melakukan pembagian dataset.
     -   Mengatasi data pencilan (_outliers_) pada data latih dengan metode LOF (_Local Outlier Factor_).
-    -   Standardisasi nilai data pada semua fitur numerik pada dataset.
+    -   Standardisasi data pada semua fitur numerik pada dataset.
   
 - **Pembangunan Model**. Pada pembangunan model terdapat beberapa algorima yang digunakan, antara lain :
 
@@ -165,8 +165,9 @@ Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
 - **Mengatasi data pencilan (_outliers_) pada data latih dengan metode LOF (_Local Outlier Factor_)**
    <br> Data pencilan (outliers) merupakan nilai yang tidak normal pada dataset. Adanya data outliers ini akan membuat analisis terhadap serangkaian data menjadi bias, atau tidak mencerminkan fenomena yang sebenarnya sehingga dapat menyebabkan pada pembuatan model menjadi kurang optimal [[5](https://statisticsbyjim.com/basics/remove-outliers/)]. Oleh karena itu, untuk menangani ouliers pada proyek ini menerapkan metode Local Outlier Factor untuk mengidentifikasi outliers dan kemudian menghapusnya dari data latih. [LocalOutlierFactor](https://scikit-learn.org/0.24/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor), bekerja dengan cara menganalisis nilai lokalitas yang ada pada k-tetangga terdekat, yang jaraknya digunakan untuk memperkirakan kepadatan lokal. Dengan membandingkan kepadatan lokal sampel dengan kepadatan lokal tetangganya, sehingga dapat mengidentifikasi sampel yang memiliki kepadatan jauh lebih rendah daripada tetangganya. Apabila kepadatannya rendah maka ini dianggap sebagai outliers.
 
-- **Standardisasi nilai data pada semua fitur numerik pada dataset**
-
+- **Standardisasi data pada semua fitur numerik pada dataset**
+  <br> Standardisasi merupakan teknik transformasi yang paling umum digunakan dalam tahap data preparation. Standarisasi membantu untuk membuat semua fitur numerik berada dalam skala data yang sama dan membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Pada proyek ini, standarisasi data dilakukan dengan menerapkan teknik [StandarScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) dari library Scikitlearn. StandardScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasi untuk menggeser distribusi.  StandardScaler menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Sekitar 68% dari nilai akan berada di antara -1 dan 1.
+  
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
 
