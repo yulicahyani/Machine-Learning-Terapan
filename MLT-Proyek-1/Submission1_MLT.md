@@ -126,7 +126,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
   Berdasarkan hasil visualisasi dari fitur target 'label' dapat memberikan informasi bahwa dataset sudah seimbang dengan jumlah sampel masing-masing label yaitu 100 sampel, sehingga tidak perlu menyeimbangkan data lagi.
   
 - **Rata-Rata Nilai pada fitur Numerik di Setiap label**
-  <br> Berikut visualisasi rata-rata kandungan N, P, K terhadap setiap label :
+  <br> Berikut visualisasi rata-rata kandungan `N, P, K` terhadap setiap label :
   
   ![download (7)](https://user-images.githubusercontent.com/71582007/139637130-05596ab3-b1fb-42a2-9cb2-55e840090c7e.png)
   ![newplot](https://user-images.githubusercontent.com/71582007/139637245-2b477f18-24bb-44e1-b52f-e75bc85e98d4.png)
@@ -138,7 +138,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
   
   Hasil visualisasi di atas memberikan informasi mengenai rata-rata kandungan N, P, K terhadap setiap label crop. Dimana dapat dilihat bahwa terdapat beberapa label crop yang membutuhkan lahan dengan kandungan N,P,K tinggi dan beberapa label membutuhkan lahan dengan kandungan N,P,K rendah.
   
-  Berikut visualisasi rata-rata tingkat temperature, humidity dan rainfall terhadap setiap label :
+  Berikut visualisasi rata-rata tingkat `temperature, humidity dan rainfall` terhadap setiap label :
   
   ![download (10)](https://user-images.githubusercontent.com/71582007/139637582-91c1aa91-3503-4eb5-8e59-d3526f1a36a1.png)
   ![newplot (4)](https://user-images.githubusercontent.com/71582007/139637594-8a9dee28-1632-427c-8970-a2c684acf871.png)
@@ -160,9 +160,9 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 ## Data Preparation
 Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
 - **Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji**
-    <br> Agar dapat menguji performa model pada data sebenarnya, maka perlu dilakukan pembagian dataset kedalam dua atau tiga bagian. Pada proyek ini dilakukan dua bagian saja yakni pada data latih dan data uji dengan rasio 80:20. Data latih dilakukan sepenuhnya untuk melatih model, sedangkan data uji merupakan data yang belum pernah dilihat oleh model dan diharapkan model dapat memiliki performa yang sama baiknya pada data uji seperti pada data latih. Pada bagian ini dipastikan juga pembagian label kategorikal haruslah sama banyak pada data latih dan data uji. Pembagian dataset dilakukan dengan modul train_test_split dari scikit-learn.
+    <br> Untuk mengetahui kinerja model ketika dihadapkan pada data yang belum pernah dilihat sebelumnya maka perlu dilakukan pembagian dataset. Sebelum melakukan pembagian dataset, terlabih dahulu pisahkan antara variabel independen (`N, P, K, temperature, humidity, ph, rainfall`) sebagai data X dan variabel dependen (`label`) yang sebelumnya nilai pada variabel ini sudah di convert menjadi numerik menggunakan modul [LabelEncoder](https://scikitlearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) dari scikit-learn sebagai data y. Kemudian pada proyek ini dataset dibagi menjadi data latih dan data uji dengan rasio 80% untuk data latih dan 20% untuk data uji. Data latih merupakan data yang akan kita latih untuk membangun model _machine learning_, sedangkan data uji merupakan data yang belum pernah dilihat oleh model dan digunakan untuk melihat kinerja atau performa dari model yang dilatih.  Pembagian dataset dilakukan dengan modul [train_test_split](https://scikit-learn.org/0.24/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) dari scikit-learn.
 
-- **Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_)
+- **Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_)**
 - **Melakukan standardisasi data pada semua fitur numerik pada dataset**
 
 ## Modeling
