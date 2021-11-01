@@ -29,9 +29,9 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 - **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
   
-    -   Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
-    -   Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_).
-    -   Melakukan standardisasi data pada semua fitur numerik pada dataset.
+    -   Melakukan pembagian dataset.
+    -   Mengatasi data pencilan (_outliers_) pada data latih dengan metode LOF (_Local Outlier Factor_).
+    -   Standardisasi nilai data pada semua fitur numerik pada dataset.
   
 - **Pembangunan Model**. Pada pembangunan model terdapat beberapa algorima yang digunakan, antara lain :
 
@@ -159,14 +159,13 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Preparation
 Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
-- **Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji**
+- **Melakukan pembagian dataset**
     <br> Untuk mengetahui kinerja model ketika dihadapkan pada data yang belum pernah dilihat sebelumnya maka perlu dilakukan pembagian dataset. Sebelum melakukan pembagian dataset, terlabih dahulu pisahkan antara variabel independen (`N, P, K, temperature, humidity, ph, rainfall`) sebagai data X dan variabel dependen (`label`) yang sebelumnya nilai pada variabel ini sudah di convert menjadi numerik menggunakan modul [LabelEncoder](https://scikitlearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) dari scikit-learn sebagai data y. Kemudian pada proyek ini dataset dibagi menjadi data latih dan data uji dengan rasio 80% untuk data latih dan 20% untuk data uji. Data latih merupakan data yang akan kita latih untuk membangun model _machine learning_, sedangkan data uji merupakan data yang belum pernah dilihat oleh model dan digunakan untuk melihat kinerja atau performa dari model yang dilatih.  Pembagian dataset dilakukan dengan modul [train_test_split](https://scikit-learn.org/0.24/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) dari scikit-learn. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data latih yaitu 1760 sampel dan jumlah sample pada data uji yaitu 440 sampel dari total jumlah sample pada dataset yaitu 2200 sampel.
 
-- **Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_)**
-   <br> Data pencilan merupakan nilai yang tidak normal pada dataset dan dapat mengakibatkan distorsi pada analisis statistika dan berujung pada pembuatan model yang kurang optimal [[4](https://statisticsbyjim.com/basics/remove-outliers/)]. Maka dari itu, pada bagian ini diterapkan metode Local Outlier Factor untuk mendeteksi nilai outlier dan kemudian menghapusnya dari data latih. Mengapa data latih saja? Agar kita dapat melihat bagaimana performa model pada data yang belum pernah dilihat model sebelumnya termasuk juga data pencilan. Mengapa dipilih metode LOF? karena metode ini berhubungan erat prosesnya dengan algoritma _nearest neighbor_. Mengutip dari dokumentasi [LocalOutlierFactor](https://scikit-learn.org/0.24/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor), fungsi tersebut bekerja dengan cara menganalisis nilai lokalitas yang ada pada k-tetangga terdekat, yang jaraknya digunakan untuk memperkirakan kepadatan lokal. Dengan membandingkan kepadatan lokal sampel dengan kepadatan lokal tetangganya, seseorang dapat mengidentifikasi sampel yang memiliki kepadatan jauh lebih rendah daripada tetangganya. Apabila kepadatannya rendah maka ini dianggap outlier.
+- **Mengatasi data pencilan (_outliers_) pada data latih dengan metode LOF (_Local Outlier Factor_)**
+   <br> Data pencilan (outliers) merupakan nilai yang tidak normal pada dataset. Adanya data outliers ini akan membuat analisis terhadap serangkaian data menjadi bias, atau tidak mencerminkan fenomena yang sebenarnya sehingga dapat menyebabkan pada pembuatan model menjadi kurang optimal [[5](https://statisticsbyjim.com/basics/remove-outliers/)]. Oleh karena itu, untuk menangani ouliers pada proyek ini menerapkan metode Local Outlier Factor untuk mengidentifikasi outliers dan kemudian menghapusnya dari data latih. [LocalOutlierFactor](https://scikit-learn.org/0.24/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor), bekerja dengan cara menganalisis nilai lokalitas yang ada pada k-tetangga terdekat, yang jaraknya digunakan untuk memperkirakan kepadatan lokal. Dengan membandingkan kepadatan lokal sampel dengan kepadatan lokal tetangganya, sehingga dapat mengidentifikasi sampel yang memiliki kepadatan jauh lebih rendah daripada tetangganya. Apabila kepadatannya rendah maka ini dianggap sebagai outliers.
 
-
-- **Melakukan standardisasi data pada semua fitur numerik pada dataset**
+- **Standardisasi nilai data pada semua fitur numerik pada dataset**
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
