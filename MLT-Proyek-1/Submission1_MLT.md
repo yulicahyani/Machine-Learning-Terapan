@@ -53,8 +53,21 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
     -   Kekurangan :
         -   Algoritma KNN menjadi lebih lambat secara signifikan seiring meningkatnya jumlah sampel dan/atau variabel independen
 
-  - **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
-  - **XGBoost Algorithm**. Sama dengan di atas. 
+  - **Random Forest**.
+    <br> Random Forest (RF) adalah suatu algoritma yang digunakan pada klasifikasi data dalam jumlah yang besar. Klasifikasi random forest dilakukan melalui penggabungan pohon (tree) dengan melakukan training pada sampel data yang dimiliki. Penggunaan pohon (tree) yang semakin banyak akan mempengaruhi akurasi yang akan didapatkan menjadi lebih baik. Penentuan klasifikasi dengan random forest diambil berdasarkan hasil voting dari tree yang terbentuk. Pemenang dari tree yang terbentuk ditentukan dengan vote terbanyak. Proses klasifikasi pada random forest berawal dari memecah data sampel yang ada kedalam decision tree secara acak. Setelah pohon terbentuk,maka akan dilakukan voting pada setiap kelas dari data sampel. Kemudian, mengkombinasikan vote dari setiap kelas kemudian diambil vote yang paling banyak.Dengan menggunakan random forest pada klasifikasi data maka, akan menghasilkan vote yang paling baik [[8](https://id.wikipedia.org/wiki/Random_forest)]. Kelebihan dan kekurangan algoritma Random Forest adalah sebagai berikut (bersumber dari [[9](https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0)]) :
+    
+    -   Kelebihan :
+        -   Algoritma Random Forest merupakan algoritma dengan pembelajaran paling akurat yang tersedia. Untuk banyak kumpulan data, algoritma ini menghasilkan pengklasifikasi yang sangat akurat
+        -   Algoritma ini berjalan secara efisien pada data besar
+        -   Algoritma ini dapat menangani ribuan variabel input tanpa penghapusan variabel
+        -   Algoritma ini memberikan perkiraan variabel apa yang penting dalam klasifikasi
+        -   Algoritma ini memiliki metode yang efektif untuk memperkirakan data yang hilang dan menjaga akurasi ketika sebagian besar data hilang
+    -   Kekurangan :
+        -   Algoritma Random Forest overfiting untuk beberapa kumpulan data dengan tugas klasifikasi/regresi yang bising/noise
+        -   Untuk data yang menyertakan variabel kategorik dengan jumlah level yang berbeda, Random Forest menjadi bias dalam mendukung atribut dengan level yang lebih banyak. Oleh karena itu, skor kepentingan variabel dari Random Forest tidak dapat diandalkan untuk jenis data ini.
+
+  - **XGBoost Algorithm**.
+    <br>
 
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
@@ -102,3 +115,7 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 [[6](https://www.ijert.org/crop-prediction-using-machine-learning-approaches)] Mahendra, N., Vishwakarma, D., Nischitha, K., Ashwini, Manjuraju, M. R. (2020). _Crop Prediction using Machine Learning Approaches_. International Journal of Engineering Research & Technology, Vol 09, Issue 08. https://www.ijert.org/crop-prediction-using-machine-learning-approaches
 
 [[7](https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f)] Raj, A. (2021, Apr 8). _Introduction to Classification Using K Nearest Neighbours_. Medium. https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f
+
+[[8](https://id.wikipedia.org/wiki/Random_forest)] Wikipedia. (2021, Sept 23). _Random forest_. Wikipedia. https://id.wikipedia.org/wiki/Random_forest
+
+[[9](https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0)] Chakure, A. (2019, jul 6). _Random Forest Classification_. Medium. https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0
