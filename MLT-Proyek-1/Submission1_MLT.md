@@ -178,7 +178,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Confusion Matrix</p>
   <img width="825" alt="matrixevaluasi1" src="https://user-images.githubusercontent.com/71582007/139689940-26cad782-328f-4e5e-beb3-e07cbe53aaf3.PNG">
   
-  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma K-Nearest Neighbor memperoleh nilai akurasi yaitu sebesar 0.97.
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma K-Nearest Neighbor memperoleh nilai akurasi yaitu sebesar 0.979545.
 
 - **Random Forest**
   <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [RandomForestClassifier](https://scikitlearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) dari library Scikitlearn. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan algoritma Random Forest dapat dilihat pada tabel berikut :
@@ -187,7 +187,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Confusion Matrix</p>
   <img width="814" alt="matrixevaluasi2" src="https://user-images.githubusercontent.com/71582007/139693019-d31b22fa-3315-41fc-97c5-d5995328a61b.PNG">
   
-  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma Random Forest memperoleh nilai akurasi yaitu sebesar 0.99.
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma Random Forest memperoleh nilai akurasi yaitu sebesar 0.997727.
   
 - **XGBoost Algorithm**
   <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html) dari library xgboost. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan XGBoost Algorithm dapat dilihat pada tabel berikut :
@@ -196,8 +196,14 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Confusion Matrix</p>
   <img width="816" alt="matrixevaluasi3" src="https://user-images.githubusercontent.com/71582007/139693273-15fec773-6edf-4e37-bd65-2af24f94dbdb.PNG">
   
-  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma XGBoost memperoleh nilai akurasi yaitu sebesar 0.99.
-  
+  Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma XGBoost memperoleh nilai akurasi yaitu sebesar 0.995455.
+ 
+Dari hasil pengujian ketiga model yang telah dibuat, berikut merupakan perbandingan performa antar Model :
+
+<img width="373" alt="performa3model" src="https://user-images.githubusercontent.com/71582007/139694995-ef15c8ec-6419-4765-a77b-a35abb2bf87d.PNG">
+
+Dari tabel di atas dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 80%. Dimana dapat dilihat juga bahwa model dengan algoritma Random Forest memiliki nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma K-Nearest Neighbor dan XGBoost. 
+
 ## Evaluation
 Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memilih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
