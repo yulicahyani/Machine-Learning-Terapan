@@ -29,14 +29,13 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 - **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
   
-    -   Memeriksa _missing value_ pada data dan mengisinya dengan nilai rata rata atau _mean substitution_ jika ditemukan _missing value_ pada data.
     -   Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
     -   Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_).
     -   Melakukan standardisasi data pada semua fitur numerik pada dataset.
   
 - **Pembangunan Model**. Pada pembangunan model terdapat beberapa algorima yang digunakan, antara lain :
 
-  - **K-Nearest Neighbor**. 
+  - **K-Nearest Neighbor** 
     <br>K-Nearest Neighbor atau KNN adalah algoritma yang relatif sederhana dibandingkan dengan algoritma lain. Algoritma KNN menggunakan kesamaan fitur untuk memprediksi nilai dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k-tetangga terdekat. KNN bisa digunakan untuk kasus klasifikasi dan regresi [[7](https://towardsdatascience.com/getting-acquainted-with-k-nearest-neighbors-ba0a9ecf354f)]. Cara kerja algoritma KNN adalah sebagai berikut (bersumber dari [[4](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)]) :
     
     -   Inisialisasi nilai K (jumlah tetangga)
@@ -53,7 +52,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
     -   Kekurangan :
         -   Algoritma KNN menjadi lebih lambat secara signifikan seiring meningkatnya jumlah sampel dan/atau variabel independen
 
-  - **Random Forest**.
+  - **Random Forest**
     <br> Random Forest (RF) adalah suatu algoritma yang digunakan pada klasifikasi data dalam jumlah yang besar. Klasifikasi random forest dilakukan melalui penggabungan pohon (tree) dengan melakukan training pada sampel data yang dimiliki. Penggunaan pohon (tree) yang semakin banyak akan mempengaruhi akurasi yang akan didapatkan menjadi lebih baik. Penentuan klasifikasi dengan random forest diambil berdasarkan hasil voting dari tree yang terbentuk. Pemenang dari tree yang terbentuk ditentukan dengan vote terbanyak. Proses klasifikasi pada random forest berawal dari memecah data sampel yang ada kedalam decision tree secara acak. Setelah pohon terbentuk,maka akan dilakukan voting pada setiap kelas dari data sampel. Kemudian, mengkombinasikan vote dari setiap kelas kemudian diambil vote yang paling banyak.Dengan menggunakan random forest pada klasifikasi data maka, akan menghasilkan vote yang paling baik [[8](https://id.wikipedia.org/wiki/Random_forest)]. Kelebihan dan kekurangan algoritma Random Forest adalah sebagai berikut (bersumber dari [[9](https://medium.com/swlh/random-forest-classification-and-its-implementation-d5d840dbead0)]) :
     
     -   Kelebihan :
@@ -66,7 +65,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
         -   Algoritma Random Forest overfiting untuk beberapa kumpulan data dengan tugas klasifikasi/regresi yang bising/noise
         -   Untuk data yang menyertakan variabel kategorik dengan jumlah level yang berbeda, Random Forest menjadi bias dalam mendukung atribut dengan level yang lebih banyak. Oleh karena itu, skor kepentingan variabel dari Random Forest tidak dapat diandalkan untuk jenis data ini.
 
-  - **XGBoost Algorithm**.
+  - **XGBoost Algorithm**
     <br> XGboost adalah algoritma yang merupakan implementasi lanjutan dari algoritma peningkatan gradien (Gradient Boosting). XGboost menggunakan prinsip ensemble yaitu menggabungkan beberapa set pembelajar (tree) yang lemah menjadi sebuah model yang kuat sehinga menghasilkan prediksi yang kuat. Kelebihan dari algoritma XGBoost adalah sebagai berikut (bersumber dari [[10](https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d)]) :
     
     -   Kelebihan :
@@ -76,19 +75,95 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
         -   Dilengkapi dengan built in cross validation
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+- **Informasi Dataset**
+  <br> Dataset yang digunakan pada proyek ini yaitu crop dataset, informasi lebih lanjut  mengenai dataset tersebut dapat lihat pada tabel berikut :
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+  | Jenis                   | Keterangan                                                                              |
+  | ----------------------- | --------------------------------------------------------------------------------------- |
+  | Sumber                  | Crop Dataset : [Kaggle](https://www.kaggle.com/atharvaingle/crop-recommendation-dataset)/[Drive](https://drive.google.com/file/d/1HEBP8P5jsC2ghrkwaa5vk59iDqXaSWbv/view?usp=sharing) |
+  | Dataset Owner           | Atharva Ingle                                                                           |
+  | Lisensi                 | Unknown                                                                                 |
+  | Kategori                | data tabel, pertanian, sistem rekomendasi                                               |
+  | Rating Penggunaan       | 5.9 (Silver)                                                                            |
+  | Jenis dan Ukuran Berkas | CSV (150.03 kb)                                                                         |
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+  Setelah melakukan observasi pada dataset yang diunduh melalui link drive yaitu `Crop_prediction.csv`, didapatakan informasi sebagai berikut :
+  
+  - Terdapat  2200 baris (records atau jumlah pengamatan) yang berisi informasi mengenai data lahan pertanian
+  - Terdapat 8 kolom yaitu `N, P, K, temperature, humidity, ph, rainfall, dan label` yang merupakan veriabel - variabel pada data
+  - Dari kolom-kolom tersebut terdapat 3 kolom numerik dengan tipe data int64, yaitu `N, P, K` dan terdapat 4 kolom numerik dengan tipe data float64 yaitu `temperature, humidity, ph dan rainfall` yang merupakan fitur numerik. 
+  - Terdapat 1 kolom dengan tipe object yaitu `label`, kolom ini merupakan _categorical features_ (fitur non-numerik) dimana kolom ini merupakan target fitur
+  - Tidak terdapat missing value pada dataset. 
+  
+  Untuk penjelasan mengenai variabel-variable pada crop dataset dapat dilihat pada poin-poin berikut ini:
+
+  - `N` - rasio kandungan Nitrogen dalam tanah
+  - `P` - rasio kandungan Fosfor dalam tanah
+  - `K` - rasio kandungan Kalium dalam tanah
+  - `temperature` - suhu dalam derajat Celcius
+  - `humidity` - kelembaban relatif dalam %
+  - `ph` - nilai ph tanah
+  - `rainfall` - curah hujan dalam mm
+  - `label` - label dari crop yang cocok untuk tumbuh di lahan pertanian berdasarkan variabel numerik di atas. Kemudian terdapat 22 label crop pada data ini yaitu `'rice', 'maize', 'chickpea', 'kidneybeans', 'pigeonpeas', 'mothbeans', 'mungbean', 'blackgram', 'lentil', 'pomegranate', 'banana', 'mango', 'grapes', 'watermelon', 'muskmelon', 'apple', 'orange', 'papaya', 'coconut', 'cotton', 'jute', 'coffee'`
+
+- **Sebaran atau Distribusi Data pada Setiap Fitur**
+  <br> Berikut merupakan visualisasi data yang menunjukkan sebaran/distribusi data pada setiap fitur fitur numerik (`N, P, K, temperature, humidity, ph, rainfall`) :
+  
+  ![newplot](https://user-images.githubusercontent.com/71582007/139633411-7288abed-f691-4258-84ea-5273e6ef11fc.png)
+  ![newplot (1)](https://user-images.githubusercontent.com/71582007/139633840-077ffa27-af47-45b0-9129-7d4801e6314f.png)
+  ![newplot (2)](https://user-images.githubusercontent.com/71582007/139633855-d974c671-effe-4b20-9f50-7c7374b03dbf.png)
+  ![newplot (6)](https://user-images.githubusercontent.com/71582007/139633884-460310fd-7546-4721-a20e-85ccc95c0c1d.png)
+  ![newplot (3)](https://user-images.githubusercontent.com/71582007/139633903-1d64c78f-18c7-4504-be4a-af47c8c587ee.png)
+  ![newplot (4)](https://user-images.githubusercontent.com/71582007/139633972-7cb23fd3-21b0-4f3b-bb22-73bc16e2ac68.png)
+  ![newplot (5)](https://user-images.githubusercontent.com/71582007/139633981-61472d31-9a2b-43d3-9a34-c2f061497110.png)
+
+  Berdasarkan hasil visualisasi data diatas, dapat terlihat sebaran atau distribusi data yang ada pada setiap fitur. Termasuk nilai minimum, median, maksimum, Q1, Q3, batas atas dan batas bawah. Selain itu dapat dilihat juga pada beberapa fitur masih terdapat nilai outliers.
+  
+  Berikut merupakan visualisasi data yang menunjukkan sebaran/distribusi data pada fitur target (`label`) :
+  
+  ![newplot(7)](https://user-images.githubusercontent.com/71582007/139634105-c77da12e-746e-4516-b815-55a454238ca7.png)
+  
+  Berdasarkan hasil visualisasi dari fitur target 'label' dapat memberikan informasi bahwa dataset sudah seimbang dengan jumlah sampel masing-masing label yaitu 100 sampel, sehingga tidak perlu menyeimbangkan data lagi.
+  
+- **Rata-Rata Nilai pada fitur Numerik di Setiap label**
+  <br> Berikut visualisasi rata-rata kandungan N, P, K terhadap setiap label :
+  
+  ![download (7)](https://user-images.githubusercontent.com/71582007/139637130-05596ab3-b1fb-42a2-9cb2-55e840090c7e.png)
+  ![newplot](https://user-images.githubusercontent.com/71582007/139637245-2b477f18-24bb-44e1-b52f-e75bc85e98d4.png)
+  ![download (8)](https://user-images.githubusercontent.com/71582007/139637283-9ae82f9b-011c-43b3-b4a3-b54bbe99fcf8.png)
+  ![newplot (1)](https://user-images.githubusercontent.com/71582007/139637299-78e91807-90c7-4024-873e-547af63f2026.png)
+  ![download (9)](https://user-images.githubusercontent.com/71582007/139637345-34e48b1f-0ed1-4f4e-9324-483cd1dfc30d.png)
+  ![newplot (2)](https://user-images.githubusercontent.com/71582007/139637351-46d5dd91-87fc-4c0d-8349-af64e4ee0aae.png)
+  ![newplot (3)](https://user-images.githubusercontent.com/71582007/139637409-4027dd70-8967-4491-b488-9c2671580d80.png)
+  
+  Hasil visualisasi di atas memberikan informasi mengenai rata-rata kandungan N, P, K terhadap setiap label crop. Dimana dapat dilihat bahwa terdapat beberapa label crop yang membutuhkan lahan dengan kandungan N,P,K tinggi dan beberapa label membutuhkan lahan dengan kandungan N,P,K rendah.
+  
+  Berikut visualisasi rata-rata tingkat temperature, humidity dan rainfall terhadap setiap label :
+  
+  ![download (10)](https://user-images.githubusercontent.com/71582007/139637582-91c1aa91-3503-4eb5-8e59-d3526f1a36a1.png)
+  ![newplot (4)](https://user-images.githubusercontent.com/71582007/139637594-8a9dee28-1632-427c-8970-a2c684acf871.png)
+  ![download (11)](https://user-images.githubusercontent.com/71582007/139637693-b1a2ea75-995d-4f40-9d2f-2bf6c9268190.png)
+  ![newplot (5)](https://user-images.githubusercontent.com/71582007/139637711-30c53f4f-d297-4da1-a221-97d33be42192.png)
+  ![download (12)](https://user-images.githubusercontent.com/71582007/139637771-38bedd7e-61fc-4852-a44e-642695206115.png)
+  ![newplot (6)](https://user-images.githubusercontent.com/71582007/139637784-5b9678bf-8cfa-4822-8565-75bc74206906.png)
+  ![newplot (7)](https://user-images.githubusercontent.com/71582007/139637795-c2e66d8a-71f8-4c5b-ba70-c72276fdfd77.png)
+  
+  Hasil visualisasi di atas memberikan informasi mengenai tingkat temperature, humidity dan rainfall terhadap setiap label crop. Dimana dapat dilihat bahwa terdapat beberapa label crop yang membutuhkan lahan dengan tingkat temperature, humidity dan rainfall tinggi dan beberapa label membutuhkan lahan dengan tingkat temperature, humidity dan rainfall rendah.
+
+- **Korelasi antar Fitur Numerik**
+  <br> Berikut merupakan _Correlation Matrix_ antar fitur numerik :
+  
+  ![download (13)](https://user-images.githubusercontent.com/71582007/139638215-ae637dca-3a13-427a-af93-dcaf5a272803.png)
+  
+  Dari _Correlation Matrix_ dapat dilihat bahwa fitur P dan K memiliki korelasi yang sedikit tinggi.
 
 ## Data Preparation
-Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
-- Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
-- Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap Data Preparation. 
+Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
+- **Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji**
+    <br> Agar dapat menguji performa model pada data sebenarnya, maka perlu dilakukan pembagian dataset kedalam dua atau tiga bagian. Pada proyek ini dilakukan dua bagian saja yakni pada data latih dan data uji dengan rasio 80:20. Data latih dilakukan sepenuhnya untuk melatih model, sedangkan data uji merupakan data yang belum pernah dilihat oleh model dan diharapkan model dapat memiliki performa yang sama baiknya pada data uji seperti pada data latih. Pada bagian ini dipastikan juga pembagian label kategorikal haruslah sama banyak pada data latih dan data uji. Pembagian dataset dilakukan dengan modul train_test_split dari scikit-learn.
+
+- **Menghapus data pencilan (_outlier_) pada data latih dengan metode LOF (_Local Outlier Factor_)
+- **Melakukan standardisasi data pada semua fitur numerik pada dataset**
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
