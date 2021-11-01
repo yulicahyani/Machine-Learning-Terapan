@@ -204,17 +204,28 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
  
 Dari hasil pengujian ketiga model yang telah dibuat, berikut merupakan perbandingan performa antar Model :
 
-<img width="373" alt="performa3model" src="https://user-images.githubusercontent.com/71582007/139694995-ef15c8ec-6419-4765-a77b-a35abb2bf87d.PNG">
+<img width="361" alt="performa model" src="https://user-images.githubusercontent.com/71582007/139703268-263ab661-6e56-4cd3-ab3a-56e7da1024a5.PNG">
 
-Dari tabel di atas dapat memberikan informasi bahwa ketiga model yang dibangun memiliki performa di atas 80%. Dimana dapat dilihat juga bahwa model dengan algoritma Random Forest memiliki nilai akurasi yang lebih baik dari dua model lainnya yaitu model dengan algoritma K-Nearest Neighbor dan XGBoost. 
+Dari tabel di atas dapat memberikan informasi bahwa ketiga model yang dibangun memiliki nilai akurasi di atas 80%. Dimana dapat dilihat juga bahwa model dengan algoritma Random Forest memiliki performa (nilai akurasi, precision, dan recall) yang lebih baik dari model dengan algoritma K-Nearest Neighbor dan XGBoost. 
 
 ## Evaluation
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memilih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
-- Kelebihan dan kekurangan metrik
-- Bagaimana cara menerapkannya ke dalam kode.
+Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ dan metrik evaluasi yang digunakan untuk mengukur kinerja model yaitu menggunakan metrik **akurasi, precision dan recall**. Pada klasifikasi dengan jumlah keluaran kelas yang lebih dari dua (multi-class), cara menghitung akurasi, presisi dan recall dapat dilakukan dengan menghitung rata-rata dari nilai akurasi, presisi dan recall pada setiap kelas. Berikut merupakan formula untuk menghitung nilai akurasi, presisi dan recall dari sistem klasifikasi multi-class :
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+- Akurasi
+  <br> Akurasi merupakan perbandingan antara data yang terklasifikasi benar dengan keseluruhan data. Nilai akurasi dapat diperoleh dengan Persamaan berikut :
+  
+  <img width="266" alt="akurasi" src="https://user-images.githubusercontent.com/71582007/139705435-7ee71aac-b3df-447f-8dc8-9b7315011491.PNG">
+
+- Precision
+  <br> Precision menggambarkan jumlah data kategori positif yang diklasifikasikan secara benar dibagi dengan total data yang diklasifikasi positif. Precision dapat diperoleh dengan Persamaan berikut :
+  
+  <img width="266" alt="presisi" src="https://user-images.githubusercontent.com/71582007/139705453-e4e55344-1869-4ad8-88ab-8e0125b45847.PNG">
+
+- Recall
+  <br> Sementara itu, recall menunjukkan berapa persen data kategori positif yang terklasifikasikan dengan benar oleh sistem. Recall dapat diperoleh dengan Persamaan berikut :
+  
+  <img width="267" alt="recall" src="https://user-images.githubusercontent.com/71582007/139705495-a20297ee-a787-4ca8-910f-3863246413ab.PNG">
+
 
 ## _Referensi:_
 
