@@ -22,7 +22,7 @@ Berdasarkan pada latar belakang di atas, permasalahan yang dapat diselesaikan pa
 Tujuan dibuatnya proyek ini adalah sebagai berikut :
 
 -   Melakukan pra-pemrosesan data lahan agar dapat digunakan dalam membangun model.
--   Membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut dengan tingkat akurasi > 75%.
+-   Membangun model _machine learning_ untuk mengklasifikasikan data lahan ke dalam jenis tanaman yang cocok ditanam pada lahan tersebut dengan tingkat akurasi > 80%.
 
 ### Solution statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
@@ -169,15 +169,14 @@ Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
   <br> Standardisasi merupakan teknik transformasi yang paling umum digunakan dalam tahap data preparation. Standarisasi membantu untuk membuat semua fitur numerik berada dalam skala data yang sama dan membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma. Pada proyek ini, standarisasi data dilakukan dengan menerapkan teknik [StandarScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) dari library Scikitlearn. StandardScaler melakukan proses standarisasi fitur dengan mengurangkan mean (nilai rata-rata) kemudian membaginya dengan standar deviasi untuk menggeser distribusi.  StandardScaler menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0. Sekitar 68% dari nilai akan berada di antara -1 dan 1.
   
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
+Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ yaitu tugas klasifikasi dengan lebih dari dua kelas atau banyak kelas. Proses modeling dalam proyek ini menggunakan 3 algoritma _machine learning_ yaitu `K-Nearest Neighbor`, `Random Forest` dan `XGBoost Algorithm` kemudian membandingkan performanya.
 
-Jelaskan bagaimana Anda melakukan proses modeling dalam proyek. Misalnya, Anda menggunakan satu algoritma kemudian melakukan improvement dari baseline model atau Anda menggunakan dua atau lebih algoritma kemudian membandingkan performanya.
-
-Sajikan model terbaik Anda sebagai solusi.
-Jelaskan pula hasil dari model Anda (misal, hasil prediksi).
+- **K-Nearest Neighbor**
+- **Random Forest**
+- **XGBoost Algorithm**
 
 ## Evaluation
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
+Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memilih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
 - Kelebihan dan kekurangan metrik
 - Bagaimana cara menerapkannya ke dalam kode.
