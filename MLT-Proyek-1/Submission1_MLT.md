@@ -180,7 +180,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Classification Report</p>
   <img width="200" alt="report1" src="https://user-images.githubusercontent.com/71582007/139689900-a487b612-8b51-4f0a-b7f9-bfea353ee9f9.PNG">
   <p>Confusion Matrix</p>
-  <img width="825" alt="matrixevaluasi1" src="https://user-images.githubusercontent.com/71582007/139689940-26cad782-328f-4e5e-beb3-e07cbe53aaf3.PNG">
+  ![matrixevaluasi1](https://user-images.githubusercontent.com/71582007/139824661-3e5a98c6-390a-4fe6-844d-bb2d781bc112.PNG)
   
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma K-Nearest Neighbor memperoleh nilai akurasi yaitu sebesar 0.979545.
 
@@ -189,7 +189,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Classification Report</p>
   <img width="200" alt="report2" src="https://user-images.githubusercontent.com/71582007/139693004-0f4397b6-31f1-49f8-848a-98947ac93dc2.PNG">
   <p>Confusion Matrix</p>
-  <img width="814" alt="matrixevaluasi2" src="https://user-images.githubusercontent.com/71582007/139693019-d31b22fa-3315-41fc-97c5-d5995328a61b.PNG">
+  ![matrixevaluasi2](https://user-images.githubusercontent.com/71582007/139824739-a8171aec-9374-4dde-bbc3-9d5a7acb38b6.PNG)
   
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma Random Forest memperoleh nilai akurasi yaitu sebesar 0.997727.
   
@@ -198,7 +198,7 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <p>Classification Report</p>
   <img width="200" alt="report3" src="https://user-images.githubusercontent.com/71582007/139693119-ea1c9fea-a565-466a-a7c7-094ddd418737.PNG">
   <p>Confusion Matrix</p>
-  <img width="816" alt="matrixevaluasi3" src="https://user-images.githubusercontent.com/71582007/139693273-15fec773-6edf-4e37-bd65-2af24f94dbdb.PNG">
+  ![matrixevaluasi3](https://user-images.githubusercontent.com/71582007/139824774-aa3ded32-6b4e-4112-988c-cc9d4ed73014.PNG)
   
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma XGBoost memperoleh nilai akurasi yaitu sebesar 0.995455.
  
