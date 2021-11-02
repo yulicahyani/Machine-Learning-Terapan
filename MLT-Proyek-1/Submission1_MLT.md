@@ -33,6 +33,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 - **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
   
+    -   Melakukan label encoding pada fitur target (label).
     -   Melakukan pembagian dataset.
     -   Mengatasi data pencilan (_outliers_) pada data latih dengan metode LOF (_Local Outlier Factor_).
     -   Standardisasi data pada semua fitur numerik pada dataset.
@@ -163,6 +164,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Preparation
 Berikut ini merupakan tahapan-tahapan dalam melakukan pra-pemrosesan data :
+- **Melakukan label encoding pada fitur target (label)**
 - **Melakukan pembagian dataset**
     <br> Untuk mengetahui kinerja model ketika dihadapkan pada data yang belum pernah dilihat sebelumnya maka perlu dilakukan pembagian dataset. Sebelum melakukan pembagian dataset, terlabih dahulu pisahkan antara variabel independen (N, P, K, temperature, humidity, ph, rainfall) sebagai data X dan variabel dependen (label) yang sebelumnya nilai pada variabel ini sudah di convert menjadi numerik menggunakan modul [LabelEncoder](https://scikitlearn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) dari scikit-learn sebagai data y. Kemudian pada proyek ini dataset dibagi menjadi data latih dan data uji dengan rasio 80% untuk data latih dan 20% untuk data uji. Data latih merupakan data yang akan kita latih untuk membangun model _machine learning_, sedangkan data uji merupakan data yang belum pernah dilihat oleh model dan digunakan untuk melihat kinerja atau performa dari model yang dilatih.  Pembagian dataset dilakukan dengan modul [train_test_split](https://scikit-learn.org/0.24/modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split) dari scikit-learn. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data latih yaitu 1760 sampel dan jumlah sample pada data uji yaitu 440 sampel dari total jumlah sample pada dataset yaitu 2200 sampel.
 
@@ -179,8 +181,9 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) dari library Scikitlearn dengan nilai k = 1. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan algoritma K-Nearest Neighbor dapat dilihat pada tabel berikut :
   <p>Classification Report</p>
   <img width="200" alt="report1" src="https://user-images.githubusercontent.com/71582007/139689900-a487b612-8b51-4f0a-b7f9-bfea353ee9f9.PNG">
-  <p>Confusion Matrix</p>
-  ![matrixevaluasi1](https://user-images.githubusercontent.com/71582007/139824661-3e5a98c6-390a-4fe6-844d-bb2d781bc112.PNG)
+  
+  Confusion Matrix <br>
+  ![cofusionmatrix1](https://user-images.githubusercontent.com/71582007/139825546-fd3da0fe-cafe-487d-bf6e-de91b1590609.PNG)
   
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma K-Nearest Neighbor memperoleh nilai akurasi yaitu sebesar 0.979545.
 
@@ -188,8 +191,9 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [RandomForestClassifier](https://scikitlearn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) dari library Scikitlearn. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan algoritma Random Forest dapat dilihat pada tabel berikut :
   <p>Classification Report</p>
   <img width="200" alt="report2" src="https://user-images.githubusercontent.com/71582007/139693004-0f4397b6-31f1-49f8-848a-98947ac93dc2.PNG">
-  <p>Confusion Matrix</p>
-  ![matrixevaluasi2](https://user-images.githubusercontent.com/71582007/139824739-a8171aec-9374-4dde-bbc3-9d5a7acb38b6.PNG)
+  
+  Confusion Matrix <br>
+  ![cofusionmatrix2](https://user-images.githubusercontent.com/71582007/139825456-244a5164-e0c7-47ea-bcff-d41ff7f03678.PNG)
   
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma Random Forest memperoleh nilai akurasi yaitu sebesar 0.997727.
   
@@ -197,9 +201,10 @@ Pada proyek ini, model yang dibuat merupakan kasus _multiclass classification_ y
   <br> Pada tahap ini pembuatan model dilakukan dengan menggunakan modul [XGBClassifier](https://xgboost.readthedocs.io/en/latest/python/python_api.html) dari library xgboost. Kemudian proses selanjutnya melakukan prediksi menggunakan data uji dan melakukan pengujian. Hasil pengujian dari model dengan XGBoost Algorithm dapat dilihat pada tabel berikut :
   <p>Classification Report</p>
   <img width="200" alt="report3" src="https://user-images.githubusercontent.com/71582007/139693119-ea1c9fea-a565-466a-a7c7-094ddd418737.PNG">
-  <p>Confusion Matrix</p>
-  ![matrixevaluasi3](https://user-images.githubusercontent.com/71582007/139824774-aa3ded32-6b4e-4112-988c-cc9d4ed73014.PNG)
   
+  Confusion Matrix <br>
+  ![cofusionmatrix3](https://user-images.githubusercontent.com/71582007/139825394-1b513671-8e73-4947-86d5-88c4ea7539e0.PNG)
+
   Berdasarkan hasil pengujian di atas dapat dilihat bahwa model dengan algoritma XGBoost memperoleh nilai akurasi yaitu sebesar 0.995455.
  
 Dari hasil pengujian ketiga model yang telah dibuat, berikut merupakan perbandingan performa antar Model :
