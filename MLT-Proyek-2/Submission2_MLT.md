@@ -31,7 +31,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 -   **Persiapan Data**. Pada persiapan data dapat dilakukan beberapa tahapan, antara lain :
 
     -   Persiapan data untuk model KNN.
-        -   Menyiapakan data buku yang mendapat rating lebih dari 30 kali.
+        -   Menyiapakan data buku dengan jumlah rating 30 atau lebih.
         -   Membuat pivot tabel.
     -   Persiapan data untuk model Deep Learning.
         -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
@@ -61,7 +61,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Preparation
 -   Persiapan data untuk model KNN.
-    -   Menyiapakan data buku yang mendapat rating lebih dari 30 kali.
+    -   Menyiapakan data buku dengan jumlah rating 30 atau lebih.
     -   Membuat pivot tabel.
 -   Persiapan data untuk model Deep Learning.
     -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
