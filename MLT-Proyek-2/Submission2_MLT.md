@@ -1,6 +1,9 @@
 # Laporan Proyek Machine Learning - Ni Made Yuli Cahyani
 
 ## Project Overview
+Buku adalah jendela dunia. Dengan buku seseorang dapat menjelajah ke dunia luar tanpa perlu pergi ke dunia luar. Dengan buku seseorang dapat memperoleh pengetahuan yang tiada batas, melintas waktu, dan mengenal seseorang dari seluruh belahan dunia, karena buku merupakan sumber ilmu pengetahuan. Untuk dapat memperoleh ilmu yang ada di dalam buku, seseorang harus membaca buku [[1](https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf)]. Kegiatan membaca buku sangat penting bagi kehidupan manusia, dengan terbiasa membaca buku maka seseorang akan memiliki cakrawala pengetahuan yang luas [[2](https://journal.iainkudus.ac.id/index.php/Libraria/article/download/1189/1082)]. Namun dengan banyaknya jumlah buku yang tersedia terkadang membuat pembaca kebingungan dalam menentukan buku yang hendak mereka baca. Terkadang dijumpai pembaca yang hanya ingin membaca buku-buku yang dengan reputasi penjualan terbaik. Ada pula pembaca yang hanya ingin membaca buku yang mirip dengan buku-buku yang pernah dibaca sebelumnya. Tidak jarang juga ditemui pembaca yang menentukan buku-buku yang akan dibaca selanjutnya berdasarkan rating dari buku-buku yang telah dilihatnya. Semakin tinggi rating dari buku tersebut, semakin tertarik pula pembaca untuk membacanya. Semakin rendah rating dari buku tersebut, maka pembaca cenderung enggan untuk membacanya [[3](http://eprints.undip.ac.id/65823/1/laporan_24010311130044_1.pdf)].
+
+Berdasarkan permasalahan tersebut, pada proyek ini akan dibuat suatu model sistem rekomendasi menggunakan teknik _collaborative filtering_  untuk merekomendasikan buku-buku yang mungkin akan dibaca oleh pengguna. _Collaborative filtering_ merupakan metode yang digunakan untuk merekomendasikan item berdasarkan penilaian pengguna sebelumnya, dimana attribut yang digunakan bukan konten tetapi _user behaviour_. Contohnya yaitu merekomendasikan suatu item berdasarkan dari riwayat rating dari user tersebut maupun user lain. Dengan adanya sistem rekomendasi ini diharapkan dapat membantu pengguna mendapatkan rekomendasi buku-buku yang sesuai dengan preferensi pengguna di masa lalu, buku-buku yang mungkin disukai dan belum pernah dibaca oleh pengguna.
 
 ## Business Understanding
 
@@ -31,7 +34,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 -   **Persiapan Data**. Pada persiapan data dapat dilakukan beberapa tahapan, antara lain :
 
     -   Persiapan data untuk model KNN.
-        -   Menyiapakan data buku dengan jumlah rating 30 atau lebih.
+        -   Menghilangkan data buku dengan jumlah rating dibawah threshold (30).
         -   Membuat pivot tabel.
     -   Persiapan data untuk model Deep Learning.
         -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
@@ -61,7 +64,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Preparation
 -   Persiapan data untuk model KNN.
-    -   Menyiapakan data buku dengan jumlah rating 30 atau lebih.
+    -   Menghilangkan data buku dengan jumlah rating dibawah threshold (30).
     -   Membuat pivot tabel.
 -   Persiapan data untuk model Deep Learning.
     -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
@@ -75,4 +78,11 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## _Referensi:_
 
-[[1](https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/)] Setiawan, A. 2014. _Posisi Pertanian Yang Tetap Strategis Masa Kini dan Masa Depan_. https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/
+[[1](https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf)] Gresi A.R., Alan N., Khasanah B.R., Robby A.S., Priyadi N.P. (2013). _Rumah Baca Jendela Dunia, Sebuah Model Perpustakaan Panti Asuhan_. Jurnal Ilmiah Mahasiswa, Vol. 3 No.2. https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf
+
+[[2](https://journal.iainkudus.ac.id/index.php/Libraria/article/download/1189/1082)] Shofaussamawati. (2014). _Menumbuhkan Minat Baca dengan Pengenalan Perpustakaan Pada Anak Sejak Dini_. Jurnal IAIN, Vol. 2 No.1. https://journal.iainkudus.ac.id/index.php/Libraria/article/download/1189/1082
+
+[[3](http://eprints.undip.ac.id/65823/1/laporan_24010311130044_1.pdf)] Ritdrix, A.H. (2018). _Sistem Rekomendasi Buku Menggunakan Metode Item-Based Collaborative Filtering_. Universitas Diponegoro. http://eprints.undip.ac.id/65823/1/laporan_24010311130044_1.pdf
+
+[[4](https://medium.com/@ranggaantok/bagaimana-sistem-rekomendasi-berkerja-e749dac64816)] Rangga, R. A. (2018). _Bagaimana Sistem Rekomendasi Berkerja?_. Medium. https://medium.com/@ranggaantok/bagaimana-sistem-rekomendasi-berkerja-e749dac64816
+
