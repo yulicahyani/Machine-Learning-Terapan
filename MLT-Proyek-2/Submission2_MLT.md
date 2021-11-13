@@ -1,6 +1,11 @@
 # Laporan Proyek Machine Learning - Ni Made Yuli Cahyani
 
 ## Project Overview
+
+<p align="center">
+    <img src=https://user-images.githubusercontent.com/71582007/141651018-0a3c2e7a-e9b6-4402-be87-11dda8b103df.jpg>
+</p>
+
 Buku adalah jendela dunia. Dengan buku seseorang dapat menjelajah ke dunia luar tanpa perlu pergi ke dunia luar. Dengan buku seseorang dapat memperoleh pengetahuan yang tiada batas, melintas waktu, dan mengenal seseorang dari seluruh belahan dunia, karena buku merupakan sumber ilmu pengetahuan. Untuk dapat memperoleh ilmu yang ada di dalam buku, seseorang harus membaca buku [[1](https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf)]. Kegiatan membaca buku sangat penting bagi kehidupan manusia, dengan terbiasa membaca buku maka seseorang akan memiliki cakrawala pengetahuan yang luas [[2](https://journal.iainkudus.ac.id/index.php/Libraria/article/download/1189/1082)]. Namun dengan banyaknya jumlah buku yang tersedia terkadang membuat pembaca kebingungan dalam menentukan buku yang hendak mereka baca. Terkadang dijumpai pembaca yang hanya ingin membaca buku-buku yang dengan reputasi penjualan terbaik. Ada pula pembaca yang hanya ingin membaca buku yang mirip dengan buku-buku yang pernah dibaca sebelumnya. Tidak jarang juga ditemui pembaca yang menentukan buku-buku yang akan dibaca selanjutnya berdasarkan rating dari buku-buku yang telah dilihatnya. Semakin tinggi rating dari buku tersebut, semakin tertarik pula pembaca untuk membacanya. Semakin rendah rating dari buku tersebut, maka pembaca cenderung enggan untuk membacanya [[3](http://eprints.undip.ac.id/65823/1/laporan_24010311130044_1.pdf)].
 
 Berdasarkan permasalahan tersebut, pada proyek ini akan dibuat suatu model sistem rekomendasi menggunakan teknik _collaborative filtering_  untuk merekomendasikan buku-buku yang mungkin akan dibaca oleh pengguna. _Collaborative filtering_ merupakan metode yang digunakan untuk merekomendasikan item berdasarkan penilaian pengguna sebelumnya, dimana attribut yang digunakan bukan konten tetapi _user behaviour_. Contohnya yaitu merekomendasikan suatu item berdasarkan dari riwayat rating dari user tersebut maupun user lain. Dengan adanya sistem rekomendasi ini diharapkan dapat membantu pengguna mendapatkan rekomendasi buku-buku yang sesuai dengan preferensi pengguna di masa lalu, buku-buku yang mungkin disukai dan belum pernah dibaca oleh pengguna.
@@ -48,6 +53,17 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 ## Data Understanding
 
 ### Informasi Dataset
+
+<img width="719" alt="informasi-dataset" src="https://user-images.githubusercontent.com/71582007/141651042-5d94ef43-5aba-4568-8ca2-cb34496040ce.PNG">
+
+| Jenis                   | Keterangan                                                                              |
+| ----------------------- | --------------------------------------------------------------------------------------- |
+| Sumber                  | [Kaggle Dataset : Book-Crossing](https://www.kaggle.com/ruchi798/bookcrossing-dataset)  |
+| Dataset Owner           | Ruchi Bhatia                                                                            |
+| Lisensi                 | CC0: Public Domain                                                                      |
+| Kategori                | Arts and Entertainment, Online Communities, Literature                                  |
+| Rating Penggunaan       | 10.0 (Gold)                                                                             |
+| Jenis dan Ukuran Berkas | zip (600.34 MB)                                                                         |
 
 ### Data Preprocessing
 
