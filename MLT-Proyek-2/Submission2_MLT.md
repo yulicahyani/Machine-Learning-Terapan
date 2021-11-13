@@ -2,9 +2,6 @@
 
 ## Project Overview
 
-Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-
 ## Business Understanding
 
 ### Problem Statements
@@ -20,78 +17,62 @@ Tujuan dibuatnya proyek ini adalah sebagai berikut :
 -   Membuat sistem rekomendasi buku sesuai dengan preferensi pengguna.
 -   Memberikan rekomendasi buku yang mungkin disukai dan belum pernah dibaca oleh pengguna.
 
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
-
 ### Solution Approach
 
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
--   Untuk bagian pra-pemrosesan data dilakukan beberapa teknik diantaranya :
+-   **Pra-pemrosesan Data**. Pada pra-pemrosesan data dapat dilakukan beberapa tahapan, antara lain :
 
-    -   Memperbaiki tipe data pada setiap kolom.
-    -   Mengimputasi data kosong pada kolom rating.
+    -   Menghapus kolom/fitur yang tidak diperlukan.
+    -   Mengganti tipe data pada kolom.
     -   Membersihkan data kosong pada kolom.
-    -   Membersihkan data duplikasi.
+    -   Melakukan _text cleaning_ pada data.
 
-    Setelah hal tersebut dilakukan, selanjutnya dilakukan visualisasi data yang dapat dilihat lebih lengkap pada bagian _Data Understanding_.
+-   **Persiapan Data**. Pada persiapan data dapat dilakukan beberapa tahapan, antara lain :
 
--   Untuk bagian persiapan data (sebelum dimasukkan ke model) dilakukan beberapa teknik diantaranya :
+    -   Persiapan data untuk model KNN.
+        -   Menyiapakan data buku yang mendapat rating lebih dari 30 kali.
+        -   Membuat pivot tabel.
+    -   Persiapan data untuk model Deep Learning.
+        -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
+        -   Pembagian Data untuk Training dan Validasi
 
-    -   Konversi label kategori menjadi _one-hot encoding_.
-    -   Standarisasi label numerik.
-
--   Kemudian untuk sistem rekomendasi yang dibuat, dipilih sistem rekomendasi dengan teknik _collaborative filtering_ karena sesuai dengan dataset yang akan digunakan. Sehingga sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna terhadap buku yang mirip dengan preferensi pengguna di masa lalu. Beberapa algoritma yang digunakan untuk membuat sistem rekomendasi di proyek ini diantaranya :
-
-    -   Dengan pendekatan Deep learning atau Neural Network
-    -   Dengan KNN Item-Based, yakni algoritma K-Nearest Neighbor. Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus clustering di sistem rekomendasi. Algoritma ini mengasumsikan bahwa sesuatu yang serupa pasti selalu berdekatan. Cara kerja algoritma ini adalah sebagai berikut (diterjemahkan dari [[3](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)]):
-
-        -   Muat datanya
-        -   Inisialisasi nilai K (banyak tetangga/kelompok)
-        -   Pada setiap datanya :
-            -   Hitung euclidian distance antara contoh kueri dan contoh yang ada pada data tersebut dengan rumus seperti berikut ini :
-                ![Rumus Euclidian Distance](https://user-images.githubusercontent.com/58651943/133823136-ede96318-8fa8-4e93-a35f-64a66e5b5fd0.png)
-            -   Tambahkan jarak dan urutan dari contoh pada koleksi yang berururutan
-        -   Pilih entri K paling awal pada koleksi yang berurutan
-        -   Dapatkan label dari dari entri K yang dipilih
-        -   Apabila kasus regresi, kembalikan nilai rata-ratanya. Apabila kasus klasifikasi, kembalikan labelnya.
-
-        Selain itu, berikut ini merupakan kelebihan dan kekurangan algoritma dari K-Nearest Neighbor (diterjemahkan dari [[3](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)]):
-
-        -   Kelebihan :
-            -   Algoritmanya mudah digunakan dan sederhana
-            -   Algoritmanya sangat fleksibel, dapat diimplementasikan pada kasus klasifikasi, regresi dan pencarian
-        -   Kekurangan :
-            -   Algoritme menjadi lebih lambat secara signifikan karena jumlah contoh dan/atau prediktor/variabel yang meningkat.
-
+-   **Pembangunan Model**. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik _collaborative filtering_ karena sesuai dengan dataset yang akan digunakan. Sehingga sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna terhadap buku yang mirip dengan preferensi pengguna di masa lalu. Pada pembangunan model sistem rekomendasi terdapat beberapa pendekatan yang digunakan, antara lain :
+    -   Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
+        <br> Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus clustering di sistem rekomendasi.
+    -   Dengan pendekatan Deep learning atau Neural Network.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+### Informasi Dataset
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+### Data Preprocessing
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
+-   Menghapus kolom/fitur yang tidak diperlukan.
+-   Mengganti tipe data pada kolom.
+-   Membersihkan data kosong pada kolom.
+-   Melakukan _text cleaning_ pada data.
+
+### Data Visualization
+
+-   Top 10 dari tahun penerbitan, penulis dan buku.
+-   Distribusi rating buku dan umur user.
+-   Wordcloud pada judu, penulis dan penerbit buku.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
-
+-   Persiapan data untuk model KNN.
+    -   Menyiapakan data buku yang mendapat rating lebih dari 30 kali.
+    -   Membuat pivot tabel.
+-   Persiapan data untuk model Deep Learning.
+    -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
+    -   Pembagian Data untuk Training dan Validasi
 ## Modeling
-Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+-   Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
+-   Dengan pendekatan Deep learning atau Neural Network.
 
 ## Evaluation
-Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+## _Referensi:_
+
+[[1](https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/)] Setiawan, A. 2014. _Posisi Pertanian Yang Tetap Strategis Masa Kini dan Masa Depan_. https://setkab.go.id/posisi-pertanian-yang-tetap-strategis-masa-kini-dan-masadepan/
