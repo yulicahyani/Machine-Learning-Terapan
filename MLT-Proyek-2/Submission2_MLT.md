@@ -39,11 +39,13 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 -   **Persiapan Data**. Pada persiapan data dapat dilakukan beberapa tahapan, antara lain :
 
     -   Persiapan data untuk model KNN.
-        -   Filtering data buku dengan jumlah rating >= threshold (30)
-        -   Membuat pivot tabel.
+        -   Filtering data buku dengan jumlah rating >= threshold (30).
+        -   Mengubah format data menjadi pivot tabel.
+        -   Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.
+
     -   Persiapan data untuk model Deep Learning.
         -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
-        -   Pembagian Data untuk Training dan Validasi
+        -   Pembagian Data untuk Training dan Validasi.
 
 -   **Pembangunan Model**. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik _collaborative filtering_ karena sesuai dengan dataset yang akan digunakan. Sehingga sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna terhadap buku yang mirip dengan preferensi pengguna di masa lalu. Pada pembangunan model sistem rekomendasi terdapat beberapa pendekatan yang digunakan, antara lain :
     -   **Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.**
@@ -171,22 +173,25 @@ Setelah melakukan observasi pada dataset yang diunduh pada kaggle, didapatakan i
 Pada tahap persiapan data dibagi menjadi 2 bagian berdasarkan model sitem rekomendasi yang dibangun. Berikut ini merupakan tahapan-tahapan dalam melakukan persiapan data :
 
 -   **Persiapan data untuk model KNN Item-Based.**
-    <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
+    <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 3 tahapan sebagai berikut :
     
     -   **Filtering data buku dengan jumlah rating >= threshold (30)**.
         <br> Dari data dapat dilihat bahwa hanya sekitar 293.037 dari 982.279 buku yang mendapat rating oleh lebih dari 30 pengguna dan sebagian besar sisanya kurang dikenal dengan sedikit atau tanpa interaksi pengguna yang disebut sparse rating (sparse data). Sparse rating ini kurang dapat diprediksi untuk sebagian besar pengguna dan sangat sensitif terhadap individu yang menyukai buku yang tidak jelas, yang membuat polanya sangat noise. Sebagian besar model membuat rekomendasi berdasarkan pola penilaian pengguna (user rating patterns). Untuk menghilangkan pola bising dan menghindari "memory error" karena kumpulan data besar, maka dilakukan proses filtering rating buku hanya untuk buku populer dimana data buku yang akan digunakan hanya buku-buku yang mendapatkan rating oleh lebih dari 30 pengguna. Setelah memfilter data, jumlah data yang digunakan menjadi 293.037 data dan sudah cukup untuk membuat model rekomendasi.
         
     -   **Mengubah format data menjadi pivot tabel.**
-        <br> Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan di reshape ke dalam m x n array, dimana m merupakan jumlah buku dan n merupakan jumlah user, hal tersebut dapat meringkas nilai fitur pada dataframe ke dalam tabel dua dimensi yang rapi (pivot tabel) dengan judul buku (kolom book_title) menjadi indeks tabel, id user (kolom user_id) menjadi kolom tabel dan kolom rating menjadi nilai pada setiap baris tabel. Pada proyek ini, mengubah dataframe ke dalam pivot tabel dengan menggunakan modul [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html) dari pandas. Kemudian selanjutnya kita akan mengisi pengamatan yang hilang (data kosong) dengan nilai 0 karena kita akan melakukan operasi aljabar linier (menghitung jarak antar vektor). Berikut merupakan pivot tabel yang dihasilkan :
+        <br> Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan di reshape ke dalam m x n array, dimana m merupakan jumlah buku dan n merupakan jumlah user, hal tersebut dapat meringkas nilai fitur pada dataframe ke dalam tabel dua dimensi yang rapi (pivot tabel) dengan judul buku (kolom book_title) menjadi indeks tabel, id user (kolom user_id) menjadi kolom tabel dan kolom rating menjadi nilai pada setiap baris tabel. Pada proyek ini, mengubah dataframe ke dalam pivot tabel dengan menggunakan modul [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html) dari pandas. Kemudian selanjutnya kita akan mengisi pengamatan yang hilang (data kosong) dengan nilai nol karena kita akan melakukan operasi aljabar linier (menghitung jarak antar vektor). Berikut merupakan pivot tabel yang dihasilkan :
         
-        <img width="777" alt="pivot tabel" src="https://user-images.githubusercontent.com/71582007/141689728-3561033a-60dd-4d08-8186-a0f746531f5e.PNG">
+        <img width="859" alt="pivot tabel" src="https://user-images.githubusercontent.com/71582007/141689809-9ddb85a5-7045-4b8f-95e3-27b168f5cc04.PNG">
 
     -   **Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.**
+        <br> Data dalam pivot tabel dapat dikatakan sebagai sparse matrix dengan shape 3602 x 46833. Sparse matrix merupakan matrix yang sebagian besar nilainya adalah nol. Tentu saja kita tidak ingin mengumpankan seluruh data dengan sebagian besar bernilai nol dalam tipe data float32 ke model KNN yang akan dibuat. Oleh karena itu untuk perhitungan yang lebih efisien dan mengurangi memory footprint, kita perlu mengubah nilai pada pivot tabel menjadi scipy sparse matrix dengan menggunakan modul [csr_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html) pada library scipy.
 
 -   **Persiapan data untuk model Deep Learning.**
-    <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
+    <br> Pada persiapan data untuk model Deep Learning.terdiri dari 2 tahapan sebagai berikut :
     
     -   **Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.**
+        <br>
+
     -   **Pembagian Data untuk Training dan Validasi.**
 
 ## Modeling
