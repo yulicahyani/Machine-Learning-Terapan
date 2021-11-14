@@ -190,9 +190,11 @@ Pada tahap persiapan data dibagi menjadi 2 bagian berdasarkan model sitem rekome
     <br> Pada persiapan data untuk model Deep Learning.terdiri dari 2 tahapan sebagai berikut :
     
     -   **Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.**
-        <br>
+        <br> Pada tahap ini akan dilakukan proses encoding yaitu proses mengubah data non-numerik menjadi data numerik agar model dapat memproses data tersebut. Pada proyek ini, proses encoding dilakukan pada fitur user_id dan isbn dengan memanfaatkan fungsi enumerate. Kemudian memetakan user_id dan isbn ke dataframe yang berkaitan.
 
     -   **Pembagian Data untuk Training dan Validasi.**
+        <br> Pada tahap ini kita akan melakukan pembagian data menjadi data training dan validasi. Namun sebelum itu, kita perlu mengacak datanya terlebih dahulu agar distribusinya menjadi random. Kemudian membuat variabel x untuk mencocokkan data user dan buku menjadi satu value, lalu membuat variabel y untuk membuat rating dari hasil. Setelah itu membagi menjadi 80% data train dan 20% data validasi. Setelah melakukan pembagian dataset, didapatkan jumlah sample pada data train yaitu 785823 sampel dan jumlah sample pada data validasi yaitu 196456 sampel.
+
 
 ## Modeling
 
