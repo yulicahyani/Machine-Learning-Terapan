@@ -117,19 +117,54 @@ Setelah melakukan observasi pada dataset yang diunduh pada kaggle, didapatakan i
 
 ### Data Preprocessing
 
--   Menghapus kolom/fitur yang tidak diperlukan. Pada data terdapat kolom/fitur yang tidak diperlukan karena tidak memberikan pengaruh pada proses pembuatan model sistem rekomendasi sehingga bisa dihapus atau dibuang. Kolom-kolom tersebut yaitu kolom 'Unnamed: 0' yang merupakan indeks dara dataset, kemudian kolom 'img_s', 'img_m', 'img_l' yang berisi data sampul gambar dari buku.
+-   **Menghapus kolom/fitur yang tidak diperlukan.** Pada data terdapat kolom/fitur yang tidak diperlukan karena tidak memberikan pengaruh pada proses pembuatan model sistem rekomendasi sehingga bisa dihapus atau dibuang. Kolom-kolom tersebut yaitu kolom 'Unnamed: 0' yang merupakan indeks dara dataset, kemudian kolom 'img_s', 'img_m', 'img_l' yang berisi data sampul gambar dari buku.
 
--   Mengganti tipe data pada kolom. Berdasarkan deskripsi variabel sebelumnya, didapatkan bahwa terdapat 2 kolom yang bertipe data float yaitu kolom 'year_of_publication' dan 'age'. Pada tahap ini kedua kolom tersebut akan diubah menjadi tipe data int, hal ini dilakukan karena tipe data pada kolom tersebut belum sesuai dengan data di kolomnya.
+-   **Mengganti tipe data pada kolom.** Berdasarkan deskripsi variabel sebelumnya, didapatkan bahwa terdapat 2 kolom yang bertipe data float yaitu kolom 'year_of_publication' dan 'age'. Pada tahap ini kedua kolom tersebut akan diubah menjadi tipe data int, hal ini dilakukan karena tipe data pada kolom tersebut belum sesuai dengan data di kolomnya.
 
--   Membersihkan data kosong pada kolom. Pada Book-Crossing dataset terdapat beberapa kolom yang masih memiliki data kosong yaitu kolom city dengan 14103 data kosong, state dengan 22798 data kosong dan country dengan 35374 data kosong. Kemudian karena jumlah data kosong jauh lebih sedikit dari total dataset yaitu 1031175, maka data kosong tersebut akan dihapus dari data menggunakan fungsi dropna. Setelah membersihkan data kosong tersebut, jumlah data pada dataset berubah menjadi 982279 baris (records atau jumlah pengamatan).
+-   **Membersihkan data kosong pada kolom.** Pada Book-Crossing dataset terdapat beberapa kolom yang masih memiliki data kosong yaitu kolom city dengan 14103 data kosong, state dengan 22798 data kosong dan country dengan 35374 data kosong. Kemudian karena jumlah data kosong jauh lebih sedikit dari total dataset yaitu 1031175, maka data kosong tersebut akan dihapus dari data menggunakan fungsi dropna. Setelah membersihkan data kosong tersebut, jumlah data pada dataset berubah menjadi 982279 baris (records atau jumlah pengamatan).
 
--   Melakukan _text cleaning_ pada data. Pada dataset terlihat bahwa data text pada kolom book_title belum seragam dan masih mengandung tanda/karakter yang tidak diperlukan, oleh karena itu dilakukan text cleaning pada kolom tersebut. Text cleaning yang dilakukan terdiri dari membuat text menjadi lowercase, remove text dalam tanda kurung siku, remove links, remove punctuation dan remove angka.
+-   **Melakukan _text cleaning_ pada data.** Pada dataset terlihat bahwa data text pada kolom book_title belum seragam dan masih mengandung tanda/karakter yang tidak diperlukan, oleh karena itu dilakukan text cleaning pada kolom tersebut. Text cleaning yang dilakukan terdiri dari membuat text menjadi lowercase, remove text dalam tanda kurung siku, remove links, remove punctuation dan remove angka.
 
 ### Data Visualization
 
--   Top 10 dari tahun penerbitan, penulis dan buku.
--   Distribusi rating buku dan umur user.
--   Wordcloud pada judu, penulis dan penerbit buku.
+-   **Top 10 dari tahun penerbitan, penulis dan buku.**
+
+    ![Tahun Penerbitan](https://user-images.githubusercontent.com/71582007/141676271-ace4771e-04f7-4f2d-80fe-c7dfae4ff363.png)
+    
+    Dari hasil visualisasi di atas didapatkan informasi bahwa top 10 tahun penerbitan yaitu pada tahun 1995, 1996, 1997, 1994, 1998, 2000, 2003, 1999, 2001 dan 2002. Kemudian tahun 2002 merupakan tahun dengan jumlah buku terbit paling tinggi, dimana jumlah buku yang terbit pada tahun itu sebesar 87.088K.
+        
+    ![penulis](https://user-images.githubusercontent.com/71582007/141676352-f165a013-8463-4555-a66a-52ccb164b59a.png)
+    
+    Dari hasil visualisasi di atas didapatkan informasi bahwa top 10 penulis yaitu Janet Evanovich, Sue Grafton, Danielle Steel, Tom Clancy, Dean R. Knoontz, Marry Higgins Clark, James Patterson, John Grisham, Nora Roberts dan Stephen King. Kemudian Stephen King merupakan penulis dengan jumlah buku paling tinggi, dimana jumlah buku yang ditulis sebanyak 9679 buku.
+
+    ![buku](https://user-images.githubusercontent.com/71582007/141676357-a1ded35f-1ab6-44f5-ba06-4ceec1d58cc3.png)
+    
+    Dari hasil visualisasi di atas didapatkan informasi bahwa top 10 buku yaitu angels demons, the red tent bestselling backlist, divine secrets of the yaya sisterhood a novel, the secret life of beees, bridget joness diary, the nanny diaries a novel, a painted house, the davinci code, the lonely bones a novel dan wild animus. Kemudian wild animus merupakan buku yang paling diminati dengan jumlah pembaca paling tinggi yaitu 2381 pembaca.
+
+-   **Distribusi rating buku dan umur user.**
+    
+    ![rating](https://user-images.githubusercontent.com/71582007/141676461-289f610d-9cc5-4a23-abc9-e7035dd9deec.png)
+    
+    Dari hasil visualisasi di atas didapatkan informasi bahwa nilai pada kolom rating berada pada rentang 0 - 10. Pada hasil visualisai juga terlihat sebagian besar buku memiliki rating 0.
+
+    ![umur](https://user-images.githubusercontent.com/71582007/141676464-e01f4e4b-47eb-473d-8c12-85db84b58797.png)
+
+    Dari hasil visualisasi di atas didapatkan informasi bahwa umur pengguna/user berada pada rentang 5 - 99 tahun. Pada hasil visualisai juga terlihat sebagian besar pengguna berada pada umur 34 tahun.
+    
+-   **Wordcloud pada judu, penulis dan penerbit buku.**
+    <br><br> Wordcloud kolom penulis (book_author)
+    
+    ![author](https://user-images.githubusercontent.com/71582007/141676630-6595b50e-0349-43ef-b88a-7e0923c4058c.png)
+
+    Wordcloud kolom judul buku (book_title)
+    
+    ![title](https://user-images.githubusercontent.com/71582007/141676642-3126a986-b1aa-4230-8b42-ba75d7c37cab.png)
+    
+    Wordcloud kolom penerbit (publisher)
+    
+    ![penerbit](https://user-images.githubusercontent.com/71582007/141676652-7080608f-ef4e-4e43-8317-f77ddd216745.png)
+    
+    Dari hasil visualisasi di atas menunjukkan daftar kata-kata yang digunakan dalam dalam kolom book_author, book_title dan publisher, umumnya semakin banyak kata yang digunakan semakin besar ukuran kata tersebut dalam visualisasi. Pada visualisai terlihat bahwa kata-kata yang paling banyak muncul pada kolom book_author yaitu Stephen King dan King Stephen, pada kolom book_title yaitu novels paperback dan mysteries paperback dan pada kolom publisher yaitu Ballantine Books dan Publishing Group.
 
 ## Data Preparation
 -   Persiapan data untuk model KNN.
