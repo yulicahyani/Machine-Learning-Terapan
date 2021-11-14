@@ -71,6 +71,8 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ### Informasi Dataset
 
+Dataset yang digunakan pada proyek ini yaitu Book-Crossing dataset, informasi lebih lanjut  mengenai dataset tersebut dapat lihat pada tabel berikut:
+
 <img width="719" alt="informasi-dataset" src="https://user-images.githubusercontent.com/71582007/141651042-5d94ef43-5aba-4568-8ca2-cb34496040ce.PNG">
 
 | Jenis                   | Keterangan                                                                              |
@@ -81,6 +83,37 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 | Kategori                | Arts and Entertainment, Online Communities, Literature                                  |
 | Rating Penggunaan       | 10.0 (Gold)                                                                             |
 | Jenis dan Ukuran Berkas | zip (600.34 MB)                                                                         |
+
+Setelah melakukan observasi pada dataset yang diunduh pada kaggle, didapatakan informasi sebagai berikut :
+  
+-   Terdapat 1031175 baris (records atau jumlah pengamatan) dalam Book-Crossing dataset.
+-   Terdapat 19 kolom yaitu 'Unnamed: 0', 'user_id', 'location', 'age', 'isbn', 'rating', 'book_title', 'book_author', 'year_of_publication', 'publisher', 'img_s', 'img_m', 'img_l', 'Summary', 'Language', 'Category', 'city', 'state', 'country'.
+-   Terdapat 3 kolom numerik dengan tipe data int64, yaitu: Unnamed: 0, user_id, rating. Ini merupakan fitur numerik. Tetapi untuk kolom Unnamed: 0 merupakan fitur yang tidak diperlukan dan bisa dibuang. 
+-   Terdapat 2 kolom numerik dengan tipe data float64 yaitu: age dan year_of_publication. Ini merupakan fitur numerik.
+-   Terdapat 14 kolom dengan tipe object, yaitu: location, isbn, book_title, book_author, publisher, img_s, img_m, img_l, Summary, Language, Category, city, state, country. Kolom ini merupakan categorical features (fitur non-numerik) dimana kolom ini merupakan target fitur.
+-   Tidak terdapat data duplikat pada dataset. 
+  
+ Untuk penjelasan mengenai variabel-variable pada Book-Crossing dataset dapat dilihat pada poin-poin berikut ini:
+
+  - `Unnamed: 0` - index pada data
+  - `user_id` - id dari pengguna
+  - `location` - lokasi/alamat pengguna
+  - `age` - umur pengguna
+  - `isbn` - kode ISBN (International Standard Book Number) buku
+  - `rating` - rating dari buku
+  - `book_title` - judul buku
+  - `book_author` - penulis buku
+  - `year_of_publication` - tahun terbit buku
+  - `publisher` - penerbit buku
+  - `img_s` - gambar sampul buku (small)
+  - `img_m` - gambar sampul buku (medium)
+  - `img_l` - gambar sampul buku (large)
+  - `Summary` - ringkasan/sinopsis buku
+  - `Language` - bahasa yang digunakan buku
+  - `Category` - kategori buku
+  - `city` - kota pengguna
+  - `state` - negara bagian penguna
+  - `country` - negara pengguna
 
 ### Data Preprocessing
 
