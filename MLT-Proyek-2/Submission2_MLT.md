@@ -39,7 +39,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 -   **Persiapan Data**. Pada persiapan data dapat dilakukan beberapa tahapan, antara lain :
 
     -   Persiapan data untuk model KNN.
-        -   Menghilangkan data buku dengan jumlah rating dibawah threshold (30).
+        -   Filtering data buku dengan jumlah rating >= threshold (30)
         -   Membuat pivot tabel.
     -   Persiapan data untuk model Deep Learning.
         -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
@@ -47,7 +47,19 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 -   **Pembangunan Model**. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik _collaborative filtering_ karena sesuai dengan dataset yang akan digunakan. Sehingga sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna terhadap buku yang mirip dengan preferensi pengguna di masa lalu. Pada pembangunan model sistem rekomendasi terdapat beberapa pendekatan yang digunakan, antara lain :
     -   Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
-        <br> Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus clustering di sistem rekomendasi.
+        <br> Item-based collaborative filtering merupakan metode rekomendasi yang bekerja berdasarkan adanya kesamaan antara  pemberi rating terhadap item yang dituju. Dari tingkat kesamaan item, kemudian dibagi berdasarkan parameter kebutuhan pelanggan untuk memperoleh nilai kegunaan item. Item yang memiliki nilai tertinggi maka akan dijadikan rekomendasi 
+[[5](https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281)]. Kemudian algoritma yang digunakan pada pendekatan ini yaitu  K-Nearest Neighbor (KNN) karena mudah digunakan dan dapat mengantisipasi jika pengguna kurang paham  dengan apa yang ingin dicari karena metode ini menerapkan prinsip pencarian menggunakan jarak kedekatan (kemiripan data) sampel  dengan  data  yang  ada [[6]https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]. 
+
+Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (bersumber dari [[6]https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]) :
+    
+        -   Kelebihan :
+            -   Keakuratan hasil yang diperoleh lebih dijamin
+            -   Untuk Data Training yang besar, hasilnya akan lebih efektif.
+        -   Kekurangan :
+            -   Berdasarkan perhitungan nilai jarak (Distance Based Learning), tidak jelas atribut mana yang memberikan hasil yang baik dan perhitungan jarak mana yang sebaiknya digunakan,
+            -   Peneliti perlu menghitung nilai baru ke semua data yang ada pada Data Training dan menghitung jarak karena nilai komputasinya tinggi
+            -   Parameter K perlu ditunjukkan (jumlah tetangga terdekat).
+            
     -   Dengan pendekatan Deep learning atau Neural Network.
 
 ## Data Understanding
@@ -80,7 +92,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 ## Data Preparation
 -   Persiapan data untuk model KNN.
-    -   Menghilangkan data buku dengan jumlah rating dibawah threshold (30).
+    -   Filtering data buku dengan jumlah rating >= threshold (30)
     -   Membuat pivot tabel.
 -   Persiapan data untuk model Deep Learning.
     -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
@@ -102,3 +114,6 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
 [[4](https://medium.com/@ranggaantok/bagaimana-sistem-rekomendasi-berkerja-e749dac64816)] Rangga, R. A. (2018). _Bagaimana Sistem Rekomendasi Berkerja?_. Medium. https://medium.com/@ranggaantok/bagaimana-sistem-rekomendasi-berkerja-e749dac64816
 
+[[5](https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281)] Agustian, E. R., Munir, Nugroho, E. P. (2020). _Sistem Rekomendasi Film Menggunakan Metode Collaborative Filtering dan K-Nearest Neighbors_.Jurnal Aplikasi dan Teori Ilmu Komputer, Vol. 3 No. 1. https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281
+
+[[6]https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)] Gusti, I. G., Nasrun, M., Nugrahaeni, R. A. (2020). _Rekomendasi Sistem Pemilihan Mobil Menggunakan K-Nearest Neighbor (KNN) CollaborativeE Filtering_.Jurnal TEKTRIKA, Vol.4, No.1. https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141
