@@ -203,7 +203,7 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
 -   **Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.**
     <br> Untuk membangun model ini, digunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari sklearn dengan parameter metriksnya yakni 'cosine' sehingga algoritma akan menghitung kesamaan cosinus antara vektor rating dan juga parameter algoritma yang digunakan untuk menghitung tetangga terdekat adalah 'brute'. Kemudian fungsi tersebut di inisialisasikan sebagai model_knn yang selanjutnya dilakukan fitting terhadap data yang berupa sparse matrix. Setelah itu dibuat fungsi recomend_book untuk memberikan rekomendasi terhadap suatu judul buku. Hasil rekomendasinya adalah seperti berikut :
     
-    <img width="444" alt="knn_rekomendasi" src="https://user-images.githubusercontent.com/71582007/141692698-913120e4-5446-4de2-adf0-056d6de095b6.PNG">
+    <img width="500" height="300" alt="knn_rekomendasi" src="https://user-images.githubusercontent.com/71582007/141692698-913120e4-5446-4de2-adf0-056d6de095b6.PNG">
 
     Dengan model K-Nearest Neighbor, kita mendapatkan 10 buku hasil rekomendasi terhadap buku dengan judul 'the rescue' dengan distance > 0.80.
 
