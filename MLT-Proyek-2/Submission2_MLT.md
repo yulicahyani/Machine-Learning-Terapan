@@ -167,12 +167,21 @@ Setelah melakukan observasi pada dataset yang diunduh pada kaggle, didapatakan i
     Dari hasil visualisasi di atas menunjukkan daftar kata-kata yang digunakan dalam dalam kolom book_author, book_title dan publisher, umumnya semakin banyak kata yang digunakan semakin besar ukuran kata tersebut dalam visualisasi. Pada visualisai terlihat bahwa kata-kata yang paling banyak muncul pada kolom book_author yaitu Stephen King dan King Stephen, pada kolom book_title yaitu novels paperback dan mysteries paperback dan pada kolom publisher yaitu Ballantine Books dan Publishing Group.
 
 ## Data Preparation
--   Persiapan data untuk model KNN.
-    -   Filtering data buku dengan jumlah rating >= threshold (30)
-    -   Membuat pivot tabel.
--   Persiapan data untuk model Deep Learning.
-    -   Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.
-    -   Pembagian Data untuk Training dan Validasi
+
+Pada tahap persiapan data dibagi menjadi 2 bagian berdasarkan model sitem rekomendasi yang dibangun. Berikut ini merupakan tahapan-tahapan dalam melakukan persiapan data :
+
+-   **Persiapan data untuk model KNN Item-Based.**
+    <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
+    
+    -   **Filtering data buku dengan jumlah rating >= threshold (30)**
+    -   **Membuat pivot tabel.**
+
+-   **Persiapan data untuk model Deep Learning.**
+    <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
+    
+    -   **Melakukan proses encoding fitur user_id dan isbn ke dalam indeks integer.**
+    -   **Pembagian Data untuk Training dan Validasi.**
+
 ## Modeling
 
 -   Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
