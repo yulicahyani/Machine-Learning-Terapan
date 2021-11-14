@@ -46,10 +46,8 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
         -   Pembagian Data untuk Training dan Validasi
 
 -   **Pembangunan Model**. Pada proyek ini sistem rekomendasi yang dibuat menggunakan teknik _collaborative filtering_ karena sesuai dengan dataset yang akan digunakan. Sehingga sistem rekomendasi dibuat untuk memberikan rekomendasi pada pengguna terhadap buku yang mirip dengan preferensi pengguna di masa lalu. Pada pembangunan model sistem rekomendasi terdapat beberapa pendekatan yang digunakan, antara lain :
-    -   Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.
-        <br> Item-based collaborative filtering merupakan metode rekomendasi yang bekerja berdasarkan adanya kesamaan antara  pemberi rating terhadap item yang dituju. Dari tingkat kesamaan item, kemudian dibagi berdasarkan parameter kebutuhan pelanggan untuk memperoleh nilai kegunaan item. Item yang memiliki nilai tertinggi maka akan dijadikan rekomendasi [[5](https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281)]. Kemudian algoritma yang digunakan pada pendekatan ini yaitu  K-Nearest Neighbor (KNN) karena mudah digunakan dan dapat mengantisipasi jika pengguna kurang paham  dengan apa yang ingin dicari karena metode ini menerapkan prinsip pencarian menggunakan jarak kedekatan (kemiripan data) sampel  dengan  data  yang  ada [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]. 
-
-Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (bersumber dari [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]) :
+    -   **Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.**
+        <br> Item-based collaborative filtering merupakan metode rekomendasi yang bekerja berdasarkan adanya kesamaan antara  pemberi rating terhadap item yang dituju. Dari tingkat kesamaan item, kemudian dibagi berdasarkan parameter kebutuhan pelanggan untuk memperoleh nilai kegunaan item. Item yang memiliki nilai tertinggi maka akan dijadikan rekomendasi [[5](https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281)]. Kemudian algoritma yang digunakan pada pendekatan ini yaitu  K-Nearest Neighbor (KNN) karena mudah digunakan dan dapat mengantisipasi jika pengguna kurang paham  dengan apa yang ingin dicari karena metode ini menerapkan prinsip pencarian menggunakan jarak kedekatan (kemiripan data) sampel  dengan  data  yang  ada [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]. Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (bersumber dari [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]) :
     
         -   Kelebihan :
             -   Keakuratan hasil yang diperoleh lebih dijamin
@@ -59,7 +57,15 @@ Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (be
             -   Peneliti perlu menghitung nilai baru ke semua data yang ada pada Data Training dan menghitung jarak karena nilai komputasinya tinggi
             -   Parameter K perlu ditunjukkan (jumlah tetangga terdekat).
             
-    -   Dengan pendekatan Deep learning atau Neural Network.
+    -   **Dengan pendekatan Deep learning atau Neural Network.**
+        <br>Deep learning merupakan subbidang machine learning yang algoritmanya terinspirasi dari struktur otak manusia. Struktur tersebut dinamakan Artificial Neural Networks atau disingkat ANN. Pada dasarnya, ia merupakan jaringan saraf yang memiliki tiga atau lebih lapisan ANN. Ia mampu belajar dan beradaptasi terhadap sejumlah besar data serta menyelesaikan berbagai permasalahan yang sulit diselesaikan dengan algoritma machine learning lainnya 
+[[7](https://www.dicoding.com/blog/mengenal-deep-learning/)]. Penerapan metode Deep Learning menjadi salah satu metode yang populer untuk sistem rekomendasi. Penggunaan metode Deep Learning pada sistem rekomendasi lebih efisien dan tepat sasaran. Beberapa kelebihan penerapan Deep Learning adalah sebagai berikut (bersumber dari [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)]) :
+        
+        -   Dapat memproses unstructured data seperti teks dan gambar.
+        -   Dapat mengotomatisasi proses ekstraksi fitur tanpa perlu melakukan proses pelabelan secara manual.
+        -   Memberikan hasil akhir yang berkualitas.
+        -   Dapat mengurangi biaya operasional.
+        -   Dapat melakukan manipulasi data dengan lebih efektif.
 
 ## Data Understanding
 
@@ -116,3 +122,5 @@ Kelebihan dan kekurangan algoritma K-Nearest Neighbor adalah sebagai berikut (be
 [[5](https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281)] Agustian, E. R., Munir, Nugroho, E. P. (2020). _Sistem Rekomendasi Film Menggunakan Metode Collaborative Filtering dan K-Nearest Neighbors_.Jurnal Aplikasi dan Teori Ilmu Komputer, Vol. 3 No. 1. https://ejournal.upi.edu/index.php/JATIKOM/article/download/33208/14281
 
 [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)] Gusti, I. G., Nasrun, M., Nugrahaeni, R. A. (2020). _Rekomendasi Sistem Pemilihan Mobil Menggunakan K-Nearest Neighbor (KNN) CollaborativeE Filtering_.Jurnal TEKTRIKA, Vol.4, No.1. https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141
+
+[[7](https://www.dicoding.com/blog/mengenal-deep-learning/)] Setiawan, R. (2021). _Mengenal Deep Learning Lebih Jelas_.Dicoding. https://www.dicoding.com/blog/mengenal-deep-learning/
