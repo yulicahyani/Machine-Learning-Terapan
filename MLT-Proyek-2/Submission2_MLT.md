@@ -179,6 +179,8 @@ Pada tahap persiapan data dibagi menjadi 2 bagian berdasarkan model sitem rekome
     -   **Mengubah format data menjadi pivot tabel.**
         <br> Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan di reshape ke dalam m x n array, dimana m merupakan jumlah buku dan n merupakan jumlah user, hal tersebut dapat meringkas nilai fitur pada dataframe ke dalam tabel dua dimensi yang rapi (pivot tabel) dengan judul buku (kolom book_title) menjadi indeks tabel, id user (kolom user_id) menjadi kolom tabel dan kolom rating menjadi nilai pada setiap baris tabel. Pada proyek ini, mengubah dataframe ke dalam pivot tabel dengan menggunakan modul [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html) dari pandas. Kemudian selanjutnya kita akan mengisi pengamatan yang hilang (data kosong) dengan nilai 0 karena kita akan melakukan operasi aljabar linier (menghitung jarak antar vektor). Berikut merupakan pivot tabel yang dihasilkan :
         
+        <img width="777" alt="pivot tabel" src="https://user-images.githubusercontent.com/71582007/141689728-3561033a-60dd-4d08-8186-a0f746531f5e.PNG">
+
     -   **Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.**
 
 -   **Persiapan data untuk model Deep Learning.**
