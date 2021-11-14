@@ -173,8 +173,13 @@ Pada tahap persiapan data dibagi menjadi 2 bagian berdasarkan model sitem rekome
 -   **Persiapan data untuk model KNN Item-Based.**
     <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
     
-    -   **Filtering data buku dengan jumlah rating >= threshold (30)**
-    -   **Membuat pivot tabel.**
+    -   **Filtering data buku dengan jumlah rating >= threshold (30)**.
+        <br> Dari data dapat dilihat bahwa hanya sekitar 293.037 dari 982.279 buku yang mendapat rating oleh lebih dari 30 pengguna dan sebagian besar sisanya kurang dikenal dengan sedikit atau tanpa interaksi pengguna yang disebut sparse rating (sparse data). Sparse rating ini kurang dapat diprediksi untuk sebagian besar pengguna dan sangat sensitif terhadap individu yang menyukai buku yang tidak jelas, yang membuat polanya sangat noise. Sebagian besar model membuat rekomendasi berdasarkan pola penilaian pengguna (user rating patterns). Untuk menghilangkan pola bising dan menghindari "memory error" karena kumpulan data besar, maka dilakukan proses filtering rating buku hanya untuk buku populer dimana data buku yang akan digunakan hanya buku-buku yang mendapatkan rating oleh lebih dari 30 pengguna. Setelah memfilter data, jumlah data yang digunakan menjadi 293.037 data dan sudah cukup untuk membuat model rekomendasi.
+        
+    -   **Mengubah format data menjadi pivot tabel.**
+        <br> Sebelum masuk ke pembuatan model rekomendasi menggunakan KNN, terlebih dahulu kita harus mengubah data rating buku menjadi format yang tepat yang dapat digunakan oleh model KNN. Data rating buku akan di reshape ke dalam m x n array, dimana m merupakan jumlah buku dan n merupakan jumlah user, hal tersebut dapat meringkas nilai fitur pada dataframe ke dalam tabel dua dimensi yang rapi (pivot tabel) dengan judul buku (kolom book_title) menjadi indeks tabel, id user (kolom user_id) menjadi kolom tabel dan kolom rating menjadi nilai pada setiap baris tabel. Pada proyek ini, mengubah dataframe ke dalam pivot tabel dengan menggunakan modul [pivot_table](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html) dari pandas. Kemudian selanjutnya kita akan mengisi pengamatan yang hilang (data kosong) dengan nilai 0 karena kita akan melakukan operasi aljabar linier (menghitung jarak antar vektor). Berikut merupakan pivot tabel yang dihasilkan :
+        
+    -   **Mengkonversi value (rating) pada pivot tabel ke dalam scipy sparse matrix.**
 
 -   **Persiapan data untuk model Deep Learning.**
     <br> Pada persiapan data untuk model KNN Item-Based terdiri dari 2 tahapan sebagai berikut :
