@@ -228,7 +228,7 @@ Berikut merupakan visualisai metrik pada proses training terhadap model Deep Lea
 
 Pada proses training dapat dilihat model cukup smooth dan model konvergen pada epochs sekitar 100. Dari proses ini, kita memperoleh nilai error akhir sebesar sekitar 0.37 dan error pada data validasi sebesar 0.38. Nilai tersebut cukup bagus untuk sistem rekomendasi. 
 
-<img width="437" alt="evaluasi2" src="https://user-images.githubusercontent.com/71582007/141731240-63054c3d-7464-4aac-87b1-5dedb20e60eb.PNG">
+<img width="468" height="50" alt="evaluasi2" src="https://user-images.githubusercontent.com/71582007/141731240-63054c3d-7464-4aac-87b1-5dedb20e60eb.PNG">
 
 Kemudian setelah dilakukan evaluasi menggunakan seluruh data, model memperoleh nilai error sebesar 0.42.
 
