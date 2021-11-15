@@ -208,6 +208,13 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
     Dengan model K-Nearest Neighbor, kita mendapatkan 10 buku hasil rekomendasi terhadap buku dengan judul 'the rescue' dengan distance > 0.80.
 
 -   **Dengan pendekatan Deep learning atau Neural Network.**
+    <br> Untuk membangun model ini, digunakan metode Deep Learning atau Neural Network. Model yang dbangun akan menghitung skor kecocokan antara pengguna dan buku dengan teknik embedding. Pertama, kita melakukan proses embedding terhadap data user dan buku. Selanjutnya, lakukan operasi perkalian dot product antara embedding user dan buku. Kemudian, kita juga dapat menambahkan bias untuk setiap user dan buku. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Model dengan pendekatan Deep Learning ini dibangun dengan membuat class RecommenderNet dengan [keras Model class](https://keras.io/api/models/model/). Selanjutnya, lakukan proses compile terhadap model. Model yang dibangun menggunakan Binary Crossentropy untuk menghitung loss function, Adam (Adaptive Moment Estimation) sebagai optimizer, dan root mean squared error (RMSE) sebagai metrics evaluation. Setelah itu lakukan proses training terhadap model.
+    
+    Untuk mendapatkan rekomendasi resto, pertama kita ambil sampel user secara acak dan definisikan variabel books_not_read yang merupakan daftar buku yang belum pernah dibaca oleh pengguna, daftar books_not_read inilah yang akan menjadi buku yang kita rekomendasikan. Variabel books_not_read diperoleh dengan menggunakan operator bitwise (~) pada variabel books_read_by_user. Sebelumnya, pengguna telah memberi rating pada beberapa buku yang telah mereka baca. Kita menggunakan rating ini untuk membuat rekomendasi buku yang mungkin cocok untuk pengguna. Kemudian, untuk memperoleh rekomendasi buku, gunakan fungsi model.predict() dari library Keras. Hasil rekomendasinya adalah seperti berikut :
+    
+    <img width="512" height="488" alt="deep learning" src="https://user-images.githubusercontent.com/71582007/141725822-0751b6cb-2a0c-4953-9dc8-4730c6575de5.PNG">
+    
+    Dengan pendekatan Deep Learning, kita dapat melihat top 10 buku yang direkomendasikan untuk user dengan id 219951. Dari beberapa buku rekomendasi menyediakan kategori 'Fiction', '9', 'Families', dan 'Juvenile Fiction' yang sesuai dengan rating user. Kita memperoleh 2 rekomendasi buku dengan kategori 'Fiction', 4 rekomendasi buku dengan kategori '9', 3 rekomendasi buku dengan kategori 'Juvenile Fiction' dan 1 rekomendasi buku dengan kategori 'Fantasy fiction, English'.
 
 ## Evaluation
 
