@@ -218,6 +218,20 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
 
 ## Evaluation
 
+Pada proyek ini, untuk mengukur kinerja model dengan pendekatan Deep Learning untuk sistem rekomendasi digunakan Root Mean Squared Error (RMSE) sebagai metrics evaluationnya. Root Mean Square Error (RMSE) adalah  metode pengukuran dengan mengukur perbedaan nilai dari prediksi sebuah model sebagai estimasi atas nilai yang diobservasi. Root Mean Square Error adalah hasil dari akar kuadrat Mean Square Error. Keakuratan metode estimasi kesalahan pengukuran ditandai dengan adanya nilai RMSE yang kecil. Metode estimasi yang mempunyai Root Mean Square Error (RMSE) lebih kecil dikatakan lebih akurat daripada metode estimasi yang mempunyai Root Mean Square Error (RMSE) lebih besar. Cara Menghitung Root Mean Square Error (RMSE) adalah dengan mengurangi nilai aktual dengan nilai prediksi kemudian dikuadratkan dan dijumlahkan keseluruhan hasilnya kemudian dibagi dengan banyaknya data. Hasil perhitungan tersebut selanjutnya dihitung kembali untuk mencari nilai dari akar kuadrat [[8](https://www.khoiri.com/2020/12/cara-menghitung-root-mean-square-error-rmse.html)]. Berikut merupakan persamaan untuk menghitung RSME :
+
+![rumus rmse](https://user-images.githubusercontent.com/71582007/141730434-094b905b-bd2b-4090-a223-755458fd239b.jpg)
+
+Berikut merupakan visualisai metrik pada proses training terhadap model Deep Learning sebelumnya :
+
+![evaluasi](https://user-images.githubusercontent.com/71582007/141731085-dd0694e5-85f0-43a9-81d0-40094ed02ccb.png)
+
+Pada proses training dapat dilihat model cukup smooth dan model konvergen pada epochs sekitar 100. Dari proses ini, kita memperoleh nilai error akhir sebesar sekitar 0.37 dan error pada data validasi sebesar 0.38. Nilai tersebut cukup bagus untuk sistem rekomendasi. 
+
+<img width="437" alt="evaluasi2" src="https://user-images.githubusercontent.com/71582007/141731240-63054c3d-7464-4aac-87b1-5dedb20e60eb.PNG">
+
+Kemudian setelah dilakukan evaluasi menggunakan seluruh data, model memperoleh nilai error sebesar 0.42.
+
 ## _Referensi:_
 
 [[1](https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf)] Gresi A.R., Alan N., Khasanah B.R., Robby A.S., Priyadi N.P. (2013). _Rumah Baca Jendela Dunia, Sebuah Model Perpustakaan Panti Asuhan_. Jurnal Ilmiah Mahasiswa, Vol. 3 No.2. https://media.neliti.com/media/publications/96720-ID-rumah-baca-jendela-dunia-sebuah-model-pe.pdf
@@ -233,3 +247,5 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
 [[6](https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141)] Gusti, I. G., Nasrun, M., Nugrahaeni, R. A. (2020). _Rekomendasi Sistem Pemilihan Mobil Menggunakan K-Nearest Neighbor (KNN) CollaborativeE Filtering_.Jurnal TEKTRIKA, Vol.4, No.1. https://journals.telkomuniversity.ac.id/tektrika/article/view/1846/1141
 
 [[7](https://www.dicoding.com/blog/mengenal-deep-learning/)] Setiawan, R. (2021). _Mengenal Deep Learning Lebih Jelas_.Dicoding. https://www.dicoding.com/blog/mengenal-deep-learning/
+
+[[8](https://www.khoiri.com/2020/12/cara-menghitung-root-mean-square-error-rmse.html)] Khoiri. (2020). _Pengertian dan Cara Menghitung Root Mean Square Error (RMSE). https://www.khoiri.com/2020/12/cara-menghitung-root-mean-square-error-rmse.html
