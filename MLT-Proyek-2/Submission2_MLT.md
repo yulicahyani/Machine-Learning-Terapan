@@ -72,7 +72,6 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 ## Data Understanding
 
 -   **Informasi Dataset**
-
     <br> Dataset yang digunakan pada proyek ini yaitu Book-Crossing dataset, informasi lebih lanjut  mengenai dataset tersebut dapat lihat pada tabel berikut:
 
     <img width="719" alt="informasi-dataset" src="https://user-images.githubusercontent.com/71582007/141651042-5d94ef43-5aba-4568-8ca2-cb34496040ce.PNG">
@@ -201,7 +200,7 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
 -   **Dengan pendekatan Item-Based dengan algoritma K-Nearest Neighbor.**
     <br> Untuk membangun model ini, digunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari sklearn dengan parameter metriksnya yakni 'cosine' sehingga algoritma akan menghitung kesamaan cosinus antara vektor rating dan juga parameter algoritma yang digunakan untuk menghitung tetangga terdekat adalah 'brute'. Kemudian fungsi tersebut di inisialisasikan sebagai model_knn yang selanjutnya dilakukan fitting terhadap data yang berupa sparse matrix. Setelah itu dibuat fungsi recomend_book untuk memberikan rekomendasi terhadap suatu judul buku. Hasil rekomendasinya adalah seperti berikut :
     
-    <img width="500" height="300" alt="knn_rekomendasi" src="https://user-images.githubusercontent.com/71582007/141692698-913120e4-5446-4de2-adf0-056d6de095b6.PNG">
+    <img width="500" height="300" alt="deep learning1" src="https://user-images.githubusercontent.com/71582007/142621275-2b773b21-7232-41d7-9713-6f0222f765ac.PNG">
 
     Dengan model K-Nearest Neighbor, kita mendapatkan 10 buku hasil rekomendasi terhadap buku dengan judul 'the rescue' dengan distance > 0.80.
 
@@ -212,7 +211,7 @@ Pada proyek ini, model yang dibuat merupakan sistem rekomendasi untuk merekomend
     
     <img width="512" height="488" alt="deep learning" src="https://user-images.githubusercontent.com/71582007/141725822-0751b6cb-2a0c-4953-9dc8-4730c6575de5.PNG">
     
-    Dengan pendekatan Deep Learning, kita dapat melihat top 10 buku yang direkomendasikan untuk user dengan id 219951. Dari beberapa buku rekomendasi menyediakan kategori 'Fiction', '9', 'Families', dan 'Juvenile Fiction' yang sesuai dengan rating user. Kita memperoleh 2 rekomendasi buku dengan kategori 'Fiction', 4 rekomendasi buku dengan kategori '9', 3 rekomendasi buku dengan kategori 'Juvenile Fiction' dan 1 rekomendasi buku dengan kategori 'Fantasy fiction, English'.
+    Dengan pendekatan Deep Learning, kita dapat melihat top 10 buku yang direkomendasikan untuk user dengan id 219951. Dari beberapa buku rekomendasi menyediakan kategori 'Fiction', '9', dan 'Juvenile Fiction' yang sesuai dengan rating user. Kita memperoleh 1 rekomendasi buku dengan kategori 'Fiction', 6 rekomendasi buku dengan kategori '9' dan 3 rekomendasi buku dengan kategori 'Juvenile Fiction'.
 
 ## Evaluation
 
