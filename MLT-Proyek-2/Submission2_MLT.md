@@ -222,13 +222,13 @@ Pada proyek ini, untuk mengukur kinerja model dengan pendekatan Deep Learning un
 
 Berikut merupakan visualisai metrik pada proses training terhadap model Deep Learning sebelumnya :
 
-![evaluasi](https://user-images.githubusercontent.com/71582007/141731085-dd0694e5-85f0-43a9-81d0-40094ed02ccb.png)
+![evaluasi1](https://user-images.githubusercontent.com/71582007/142618544-5eb6baa5-542a-4f82-91a2-fc89cbe46ccb.png)
 
-Pada proses training dapat dilihat model cukup smooth dan model konvergen pada epochs sekitar 100. Dari proses ini, kita memperoleh nilai error akhir sebesar sekitar 0.37 dan error pada data validasi sebesar 0.38. Nilai tersebut cukup bagus untuk sistem rekomendasi. 
+Pada proses training dapat dilihat model cukup smooth dan model konvergen pada epochs sekitar 200. Dari proses ini, kita memperoleh nilai error akhir sebesar sekitar 0.29 dan error pada data validasi sebesar 0.33. Nilai tersebut cukup bagus untuk sistem rekomendasi. 
 
-<img width="468" height="50" alt="evaluasi2" src="https://user-images.githubusercontent.com/71582007/141731240-63054c3d-7464-4aac-87b1-5dedb20e60eb.PNG">
+<img width="650" height="70" alt="evaluasi-all" src="https://user-images.githubusercontent.com/71582007/142619006-b3936e9d-2199-4f03-82a4-432ad37a7420.PNG">
 
-Kemudian setelah dilakukan evaluasi menggunakan seluruh data, model memperoleh nilai error sebesar 0.42.
+Kemudian setelah dilakukan evaluasi menggunakan seluruh data, model memperoleh nilai error sebesar 0.31.
 
 ## _Referensi:_
 
